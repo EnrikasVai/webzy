@@ -6,13 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "pages:build": "npx @opennextjs/cloudflare build && cp .open-next/worker.js .open-next/_worker.js && cd .open-next/assets && tar cf - . | (cd .. && tar xf -) && cd ../.. && rm -rf .open-next/assets",
-    "pages:dev": "npx wrangler pages dev .opennext/cloudflare",
-    "pages:deploy": "npm run pages:build && wrangler pages deploy .opennext/cloudflare --project-name=webzy"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@opennextjs/cloudflare": "^1.20.1",
     "next": "^15.5.18",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
