@@ -6,6 +6,11 @@ export const metadata = {
   title: "Contact",
   description:
     "Contact WEBZY for a free consultation. Website development, e-commerce, SEO services.",
+  openGraph: {
+    title: "Contact | WEBZY",
+    description:
+      "Contact WEBZY for a free consultation. Website development, e-commerce, SEO services.",
+  },
 };
 
 export default function EnKontaktai() {

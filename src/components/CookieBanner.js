@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useT } from "./LocaleProvider";
+import { useT, useLocale } from "./LocaleProvider";
 
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
   const t = useT();
+  const { locale } = useLocale();
 
   useEffect(() => {
     const consent = localStorage.getItem("cookie-consent");
@@ -30,7 +31,7 @@ export default function CookieBanner() {
         <p className="text-sm text-gray-600 dark:text-gray-300 flex-1 text-center md:text-left">
           {t("cookie.tekstas")}
           <a
-            href="/privatumo-politika"
+            href={locale === "en" ? "/en/privacy-policy" : "/privatumo-politika"}
             className="text-primary-600 hover:text-primary-700 underline ml-1 whitespace-nowrap"
           >
             {t("cookie.suZinoti")}

@@ -8,6 +8,12 @@ import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
+export const metadata = {
+  title: "Professional Websites & Web Solutions",
+  description:
+    "We build fast, modern and SEO-optimized websites from €299. E-commerce, business websites, design and web solutions. Free consultation!",
+};
+
 export default function EnHome() {
   return (
     <main>

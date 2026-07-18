@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://webzy.lt/</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://webzy.lt/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://webzy.lt/en" />
+    <lastmod>2026-07-18</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://webzy.lt/apie-mus</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://webzy.lt/apie-mus" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://webzy.lt/en/about-us" />
+    <lastmod>2026-07-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://webzy.lt/kontaktai</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://webzy.lt/kontaktai" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://webzy.lt/en/contact" />
+    <lastmod>2026-07-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://webzy.lt/privatumo-politika</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://webzy.lt/privatumo-politika" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://webzy.lt/en/privacy-policy" />
+    <lastmod>2026-07-18</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://webzy.lt/blogas</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://webzy.lt/blogas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://webzy.lt/en/blog" />
+    <lastmod>2026-07-18</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://webzy.lt/en</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://webzy.lt/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://webzy.lt/en" />
+    <lastmod>2026-07-18</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://webzy.lt/en/about-us</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://webzy.lt/apie-mus" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://webzy.lt/en/about-us" />
+    <lastmod>2026-07-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://webzy.lt/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://webzy.lt/kontaktai" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://webzy.lt/en/contact" />
+    <lastmod>2026-07-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://webzy.lt/en/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://webzy.lt/privatumo-politika" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://webzy.lt/en/privacy-policy" />
+    <lastmod>2026-07-18</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://webzy.lt/en/blog</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://webzy.lt/blogas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://webzy.lt/en/blog" />
+    <lastmod>2026-07-18</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://webzy.lt/internetiniu-svetainiu-kurimas-gidas</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://webzy.lt/internetiniu-svetainiu-kurimas-gidas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://webzy.lt/en/website-development-guide" />
+    <lastmod>2026-07-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://webzy.lt/en/website-development-guide</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://webzy.lt/internetiniu-svetainiu-kurimas-gidas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://webzy.lt/en/website-development-guide" />
+    <lastmod>2026-07-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+</urlset>

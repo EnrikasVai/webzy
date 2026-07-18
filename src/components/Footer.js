@@ -27,14 +27,19 @@ export default function Footer({ locale = "lt" }) {
   const t = useT();
   const prefix = locale === "lt" ? "" : `/${locale}`;
 
+  const slug = {
+    apieMus: locale === "en" ? "about-us" : "apie-mus",
+    privatumoPolitika: locale === "en" ? "privacy-policy" : "privatumo-politika",
+  };
+
   const footerLinks = [
     { name: t("nav.paslaugos"), href: `${prefix}/#paslaugos` },
     { name: t("nav.musuDarbai"), href: `${prefix}/#darbai` },
-    { name: t("nav.apieMus"), href: `${prefix}/apie-mus` },
+    { name: t("nav.apieMus"), href: `${prefix}/${slug.apieMus}` },
     { name: t("nav.kainos"), href: `${prefix}/#kainos` },
     { name: t("nav.duk"), href: `${prefix}/#duk` },
     { name: t("nav.kontaktai"), href: `${prefix}/#kontaktai` },
-    { name: t("footer.privatumoPolitika"), href: `${prefix}/privatumo-politika` },
+    { name: t("footer.privatumoPolitika"), href: `${prefix}/${slug.privatumoPolitika}` },
   ];
 
   return (
@@ -47,9 +52,9 @@ export default function Footer({ locale = "lt" }) {
               <Image
                 src="/icon.webp"
                 alt="WEBZY"
-                width={160}
-                height={50}
-                className="h-10 w-auto brightness-0 invert"
+                width={280}
+                height={90}
+                className="h-16 md:h-20 w-auto brightness-0 dark:brightness-100"
               />
             </a>
             <p className="mt-3 text-sm text-gray-400 max-w-xs">

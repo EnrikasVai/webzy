@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { HiGlobe } from "react-icons/hi";
 import { useLocale } from "./LocaleProvider";
+import blogPosts from "@/data/blog-posts";
 
 export default function LanguageSwitcher() {
   const { locale } = useLocale();
@@ -12,10 +13,42 @@ export default function LanguageSwitcher() {
 
   useEffect(() => {
     const path = window.location.pathname;
-    setHrefs({
-      lt: path.replace(/^\/en(\/|$)/, "/") || "/",
-      en: `/en${path === "/" ? "" : path}`,
-    });
+
+    // Check if current path is a blog post
+    const cleanPath = path.replace(/^\/en/, "") || "/";
+    const ltPost = blogPosts.find((p) => p.published && p.slug === cleanPath.replace(/^\//, ""));
+    const enPost = blogPosts.find((p) => p.published && p.enSlug === cleanPath.replace(/^\//, ""));
+
+    if (ltPost) {
+      // On an LT blog post
+      setHrefs({ lt: `/${ltPost.slug}`, en: `/en/${ltPost.enSlug}` });
+    } else if (enPost) {
+      // On an EN blog post
+      setHrefs({ lt: `/${enPost.slug}`, en: `/en/${enPost.enSlug}` });
+    } else if (cleanPath === "/blogas") {
+      // Blog listing
+      setHrefs({ lt: "/blogas", en: "/en/blog" });
+    } else if (cleanPath === "/blog") {
+      setHrefs({ lt: "/blogas", en: "/en/blog" });
+    } else {
+      // Map other paths
+      const enSlugs = {"/apie-mus": "/about-us", "/kontaktai": "/contact", "/privatumo-politika": "/privacy-policy", "/blogas": "/blog"};
+      const ltSlugs = {"/about-us": "/apie-mus", "/contact": "/kontaktai", "/privacy-policy": "/privatumo-politika", "/blog": "/blogas"};
+      const pathWithoutEn = path.replace(/^\/en/, "") || "/";
+      const isEn = path.startsWith("/en");
+
+      if (isEn) {
+        setHrefs({
+          lt: ltSlugs[pathWithoutEn] || pathWithoutEn,
+          en: path,
+        });
+      } else {
+        setHrefs({
+          lt: path,
+          en: `/en${enSlugs[path] || path}`,
+        });
+      }
+    }
   }, []);
 
   // Close on outside click

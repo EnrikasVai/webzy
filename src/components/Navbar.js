@@ -15,14 +15,19 @@ export default function Navbar({ locale = "lt" }) {
 
   const prefix = locale === "lt" ? "" : `/${locale}`;
 
+  const slug = {
+    apieMus: locale === "en" ? "about-us" : "apie-mus",
+    kontaktai: locale === "en" ? "contact" : "kontaktai",
+  };
+
   const navLinks = [
     { name: t("nav.pradinis"), href: `${prefix}/` },
     { name: t("nav.paslaugos"), href: `${prefix}/#paslaugos` },
     { name: t("nav.musuDarbai"), href: `${prefix}/#darbai` },
-    { name: t("nav.apieMus"), href: `${prefix}/apie-mus` },
+    { name: t("nav.apieMus"), href: `${prefix}/${slug.apieMus}` },
     { name: t("nav.kainos"), href: `${prefix}/#kainos` },
     { name: t("nav.duk"), href: `${prefix}/#duk` },
-    { name: t("nav.kontaktai"), href: `${prefix}/kontaktai` },
+    { name: t("nav.kontaktai"), href: `${prefix}/${slug.kontaktai}` },
   ];
 
   useEffect(() => {

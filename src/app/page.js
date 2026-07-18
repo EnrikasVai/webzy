@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
 
 export const metadata = {
-  title: "Profesionalios interneto svetainės nuo 299€ | WEBZY",
+  title: "Profesionalios interneto svetainės ir web sprendimai",
   description:
     "Kuriame greitas, modernias ir SEO optimizuotas interneto svetaines nuo 299€. E-komercija, reprezentacinės svetainės, dizainas ir web sprendimai. Nemokama konsultacija!",
 };

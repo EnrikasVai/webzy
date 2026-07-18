@@ -25,7 +25,7 @@ export const metadata = {
     "svetainių kūrimas Lietuvoje",
   ],
   authors: [{ name: "WEBZY", url: "https://webzy.lt" }],
-  icons: { icon: "/favicon.ico" },
+  icons: { icon: "/favicon.ico", apple: "/icon.webp" },
   metadataBase: new URL("https://webzy.lt"),
   alternates: {
     canonical: "/",
@@ -42,12 +42,21 @@ export const metadata = {
     locale: "lt_LT",
     siteName: "WEBZY",
     url: "https://webzy.lt",
+    images: [
+      {
+        url: "/logo.svg",
+        width: 800,
+        height: 600,
+        alt: "WEBZY",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "WEBZY - Profesionalios interneto svetainės",
     description:
       "Profesionalios interneto svetainių kūrimas nuo 299€. E-komercija, dizainas, SEO. Nemokama konsultacija.",
+    images: ["/logo.svg"],
   },
   robots: {
     index: true,
@@ -59,10 +68,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="lt" className="scroll-smooth">
+    <html lang="lt" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={`${inter.variable} font-sans antialiased bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300`}
       >
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.documentElement.lang=location.pathname.startsWith("/en")?"en":"lt"`,
+          }}
+        />
         <ThemeProvider>
           <LocaleProvider locale="lt" messages={ltMessages}>
             <script

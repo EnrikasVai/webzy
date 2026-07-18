@@ -8,6 +8,11 @@ export const metadata = {
   title: "About Us",
   description:
     "Meet the WEBZY team. We create professional websites, e-commerce solutions and web design from €299.",
+  openGraph: {
+    title: "About Us | WEBZY",
+    description:
+      "Meet the WEBZY team. We create professional websites, e-commerce solutions and web design from €299.",
+  },
 };
 
 const teamMembers = [
@@ -126,7 +131,7 @@ export default function EnApieMus() {
             Get a personalized offer for your needs!
           </h2>
           <Link
-            href="/en/kontaktai"
+            href="/en/contact"
             className="inline-flex items-center gap-2 bg-white text-primary-700 hover:bg-primary-50 font-bold py-4 px-10 rounded-lg transition-all duration-300 hover:shadow-xl hover:shadow-black/20 text-lg group"
           >
             CONTACT US
