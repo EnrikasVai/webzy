@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { HiExternalLink } from "react-icons/hi";
+import AnimatedOnScroll from "./AnimatedOnScroll";
 
 const projects = [
   {
@@ -36,19 +37,22 @@ export default function Portfolio() {
   return (
     <section id="darbai" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="section-title">
-          Mūsų <span className="text-primary-600">Darbai</span>
-        </h2>
-        <p className="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 -mt-8">
-          Kiekvienas projektas – unikalus sprendimas, pritaikytas konkretiems
-          kliento poreikiams
-        </p>
+        <AnimatedOnScroll animation="fade-in-up">
+          <h2 className="section-title">
+            Mūsų <span className="text-primary-600">Darbai</span>
+          </h2>
+        </AnimatedOnScroll>
+        <AnimatedOnScroll animation="fade-in-up" delay={0.1}>
+          <p className="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 -mt-8">
+            Kiekvienas projektas – unikalus sprendimas, pritaikytas konkretiems
+            kliento poreikiams
+          </p>
+        </AnimatedOnScroll>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="group card !p-0 overflow-hidden"
+            <AnimatedOnScroll key={index} animation={index % 2 === 0 ? "fade-in-left" : "fade-in-right"} delay={index * 0.12}>
+              <div className="group card !p-0 overflow-hidden hover:-translate-y-2 transition-all duration-300 hover:shadow-xl"
             >
               {/* Project image */}
               <div className="relative h-48 overflow-hidden">
@@ -94,6 +98,7 @@ export default function Portfolio() {
                 </a>
               </div>
             </div>
+            </AnimatedOnScroll>
           ))}
         </div>
       </div>

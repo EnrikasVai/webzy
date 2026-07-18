@@ -6,11 +6,12 @@ import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
 
 const navLinks = [
-  { name: "Paslaugos", href: "#paslaugos" },
-  { name: "Mūsų darbai", href: "#darbai" },
-  { name: "Kainos", href: "#kainos" },
-  { name: "DUK", href: "#duk" },
-  { name: "Kontaktai", href: "#kontaktai" },
+  { name: "Paslaugos", href: "/#paslaugos" },
+  { name: "Mūsų darbai", href: "/#darbai" },
+  { name: "Apie mus", href: "/apie-mus" },
+  { name: "Kainos", href: "/#kainos" },
+  { name: "DUK", href: "/#duk" },
+  { name: "Kontaktai", href: "/kontaktai" },
 ];
 
 export default function Navbar() {
@@ -74,7 +75,7 @@ export default function Navbar() {
             </button>
 
             <a
-              href="#kontaktai"
+              href="/#kontaktai"
               className="btn-primary text-sm !py-2 !px-5"
             >
               Nemokama konsultacija
@@ -123,7 +124,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#kontaktai"
+            href="/#kontaktai"
             onClick={() => setIsOpen(false)}
             className="block text-center btn-primary text-sm !py-2 !px-5 mt-3"
           >

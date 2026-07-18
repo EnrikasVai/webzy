@@ -1,4 +1,5 @@
 import { HiCheck, HiBadgeCheck } from "react-icons/hi";
+import AnimatedOnScroll from "./AnimatedOnScroll";
 
 const plans = [
   {
@@ -52,24 +53,28 @@ export default function Pricing() {
   return (
     <section id="kainos" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="section-title">
-          Mūsų <span className="text-primary-600">Kainos</span>
-        </h2>
-        <p className="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 -mt-8">
-          Skaidrūs įkainiai be paslėptų mokesčių. Kiekvienam biudžetui
-          pritaikytas sprendimas.
-        </p>
+        <AnimatedOnScroll animation="fade-in-up">
+          <h2 className="section-title">
+            Mūsų <span className="text-primary-600">Kainos</span>
+          </h2>
+        </AnimatedOnScroll>
+        <AnimatedOnScroll animation="fade-in-up" delay={0.1}>
+          <p className="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 -mt-8">
+            Skaidrūs įkainiai be paslėptų mokesčių. Kiekvienam biudžetui
+            pritaikytas sprendimas.
+          </p>
+        </AnimatedOnScroll>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
-            <div
-              key={index}
-              className={`relative card flex flex-col ${
-                plan.popular
-                  ? "border-2 border-primary-500 scale-105 md:scale-105 shadow-xl"
-                  : "border border-gray-200"
-              }`}
-            >
+            <AnimatedOnScroll key={index} animation={index === 1 ? "fade-in-up" : index === 0 ? "fade-in-left" : "fade-in-right"} delay={index * 0.15}>
+              <div
+                className={`relative card flex flex-col transition-all duration-300 hover:-translate-y-2 ${
+                  plan.popular
+                    ? "border-2 border-primary-500 scale-105 md:scale-105 shadow-xl hover:shadow-2xl"
+                    : "border border-gray-200 hover:shadow-xl"
+                }`}
+              >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-600 text-white text-sm font-semibold px-4 py-1 rounded-full flex items-center gap-1">
                   <HiBadgeCheck className="w-4 h-4" />
@@ -113,6 +118,7 @@ export default function Pricing() {
                 Pasirinkti planą
               </a>
             </div>
+            </AnimatedOnScroll>
           ))}
         </div>
       </div>

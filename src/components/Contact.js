@@ -129,43 +129,25 @@ export default function Contact() {
 
           {/* Contact info */}
           <div className="space-y-6">
-            <div className="card flex items-start gap-4">
-              <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/50 rounded-xl flex items-center justify-center flex-shrink-0">
+            <a href="tel:+37062202273" className="card flex items-start gap-4 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-all duration-300 no-underline">
+              <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
                 <HiPhone className="w-6 h-6 text-primary-600" />
               </div>
               <div>
                 <h4 className="font-semibold text-gray-900 dark:text-white">Telefonas</h4>
-                <p className="text-gray-600 dark:text-gray-400">+370 6XX XXXXX</p>
+                <p className="text-gray-600 dark:text-gray-400">+37062202273</p>
               </div>
-            </div>
-            <div className="card flex items-start gap-4">
-              <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/50 rounded-xl flex items-center justify-center flex-shrink-0">
+            </a>
+            <a href="mailto:info@webzy.lt" className="card flex items-start gap-4 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-all duration-300 no-underline">
+              <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
                 <HiMail className="w-6 h-6 text-primary-600" />
               </div>
               <div>
                 <h4 className="font-semibold text-gray-900 dark:text-white">El. paštas</h4>
                 <p className="text-gray-600 dark:text-gray-400">info@webzy.lt</p>
               </div>
-            </div>
-            <div className="card flex items-start gap-4">
-              <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/50 rounded-xl flex items-center justify-center flex-shrink-0">
-                <HiLocationMarker className="w-6 h-6 text-primary-600" />
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white">Adresas</h4>
-                <p className="text-gray-600 dark:text-gray-400">Vilnius, Lietuva</p>
-              </div>
-            </div>
+            </a>
 
-            {/* Map placeholder */}
-              <div className="h-48 bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900/50 dark:to-primary-800/50 rounded-xl flex items-center justify-center">
-              <div className="text-center">
-                <HiLocationMarker className="w-8 h-8 text-primary-600 mx-auto mb-1" />
-                <p className="text-sm text-primary-700 font-medium">
-                  Žemėlapio vieta
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

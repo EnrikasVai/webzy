@@ -6,15 +6,19 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-primary-100 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950" />
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary-300/20 dark:bg-primary-600/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent-300/20 dark:bg-accent-600/10 rounded-full blur-3xl" />
+
+      {/* Floating animated blobs */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-primary-300/20 dark:bg-primary-600/10 rounded-full blur-3xl animate-float-slow" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent-300/20 dark:bg-accent-600/10 rounded-full blur-3xl animate-float-slower" />
+      <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-primary-400/10 dark:bg-primary-500/5 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }} />
+      <div className="absolute bottom-1/4 left-1/4 w-56 h-56 bg-accent-400/10 dark:bg-accent-500/5 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: "2s" }} />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
         {/* Rating badge */}
-        <div className="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-full px-4 py-2 mb-8 shadow-sm">
+        <div className="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-full px-4 py-2 mb-8 shadow-sm animate-fade-in-down">
           <div className="flex text-yellow-400">
             {[...Array(5)].map((_, i) => (
-              <HiStar key={i} className="w-4 h-4" />
+              <HiStar key={i} className="w-4 h-4 animate-wiggle" style={{ animationDelay: `${i * 0.1}s` }} />
             ))}
           </div>
           <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -23,15 +27,15 @@ export default function Hero() {
         </div>
 
         {/* Main heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white leading-tight mb-6">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white leading-tight mb-6 animate-fade-in-up">
           Profesionalios interneto svetainės,
           <br />
-          <span className="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent bg-[length:200%_100%] animate-shimmer relative overflow-hidden inline-block pb-1">
             e-komercijos ir kiti web sprendimai
           </span>
         </h1>
 
-        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10">
+        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
           Kuriama modernias, greitas ir efektyvias svetaines, kurios padeda jūsų
           verslui augti. Nuo idėjos iki pilno įgyvendinimo.
         </p>
@@ -39,27 +43,28 @@ export default function Hero() {
         {/* CTA button */}
         <a
           href="#kontaktai"
-          className="btn-primary text-lg inline-block animate-fade-in"
+          className="btn-primary text-lg inline-block animate-scale-in hover:scale-105 transition-transform duration-300"
+          style={{ animationDelay: "0.3s" }}
         >
           Nemokama konsultacija
         </a>
 
         {/* Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-primary-600">
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-8 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+          <div className="text-center group">
+            <div className="text-3xl md:text-4xl font-bold text-primary-600 group-hover:scale-110 transition-transform duration-300">
               30+
             </div>
             <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">Patenkintų klientų</div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-primary-600">
+          <div className="text-center group">
+            <div className="text-3xl md:text-4xl font-bold text-primary-600 group-hover:scale-110 transition-transform duration-300">
               50+
             </div>
             <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">Sukurtų projektų</div>
           </div>
-          <div className="text-center col-span-2 md:col-span-1">
-            <div className="text-3xl md:text-4xl font-bold text-primary-600">
+          <div className="text-center col-span-2 md:col-span-1 group">
+            <div className="text-3xl md:text-4xl font-bold text-primary-600 group-hover:scale-110 transition-transform duration-300">
               4.9
             </div>
             <div className="text-sm text-gray-500 mt-1">Įvertinimas</div>
@@ -67,7 +72,7 @@ export default function Hero() {
         </div>
 
         {/* Technology logos */}
-        <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800">
+        <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
           <p className="text-sm text-gray-400 dark:text-gray-500 mb-6">
             Dirbame su šiuolaikinėmis technologijomis
           </p>
@@ -75,7 +80,7 @@ export default function Hero() {
           <div className="flex flex-col gap-6 md:gap-4 items-center">
             {/* Row 1 */}
             <div className="flex items-center justify-center gap-6 md:gap-10 flex-wrap">
-              <div className="flex flex-col items-center gap-1 group">
+              <div className="flex flex-col items-center gap-1 group hover:-translate-y-1 transition-all duration-300">
                 <Image
                   src="/react.svg"
                   alt="React"

@@ -3,11 +3,13 @@ import { HiMail } from "react-icons/hi";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const footerLinks = [
-  { name: "Paslaugos", href: "#paslaugos" },
-  { name: "Darbai", href: "#darbai" },
-  { name: "Kainos", href: "#kainos" },
-  { name: "DUK", href: "#duk" },
-  { name: "Kontaktai", href: "#kontaktai" },
+  { name: "Paslaugos", href: "/#paslaugos" },
+  { name: "Darbai", href: "/#darbai" },
+  { name: "Apie mus", href: "/apie-mus" },
+  { name: "Kainos", href: "/#kainos" },
+  { name: "DUK", href: "/#duk" },
+  { name: "Kontaktai", href: "/#kontaktai" },
+  { name: "Privatumo politika", href: "/privatumo-politika" },
 ];
 
 const socialLinks = [
