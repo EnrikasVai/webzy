@@ -1,3 +1,4 @@
+import CookieBanner from "@/components/CookieBanner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
@@ -274,6 +275,7 @@ export default function ApieMusPage() {
       </section>
 
       <Footer locale="lt" />
+      <CookieBanner />
     </main>
   );
 }

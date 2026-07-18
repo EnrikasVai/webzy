@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CookieBanner from "@/components/CookieBanner";
 
 export const metadata = {
   title: "Privatumo politika",
@@ -84,6 +85,7 @@ export default function PrivatumoPolitikaPage() {
         </div>
       </section>
       <Footer locale="lt" />
+      <CookieBanner />
     </main>
   );
 }

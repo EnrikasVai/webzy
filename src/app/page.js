@@ -7,6 +7,7 @@ import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import CookieBanner from "@/components/CookieBanner";
 
 export const metadata = {
   title: "Profesionalios interneto svetainės nuo 299€ | WEBZY",
@@ -26,6 +27,7 @@ export default function Home() {
       <FAQ />
       <Contact />
       <Footer locale="lt" />
+      <CookieBanner />
     </main>
   );
 }

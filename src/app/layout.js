@@ -2,7 +2,6 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import ThemeProvider from "@/components/ThemeProvider";
 import LocaleProvider from "@/components/LocaleProvider";
-import CookieBanner from "@/components/CookieBanner";
 import ltMessages from "../../messages/lt.json";
 
 const inter = Inter({
@@ -102,7 +101,6 @@ export default function RootLayout({ children }) {
               }}
             />
             {children}
-            <CookieBanner />
           </LocaleProvider>
         </ThemeProvider>
       </body>

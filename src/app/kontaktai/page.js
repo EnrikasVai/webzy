@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import CookieBanner from "@/components/CookieBanner";
 
 export const metadata = {
   title: "Kontaktai",
@@ -20,6 +21,7 @@ export default function KontaktaiPage() {
         <Contact />
       </div>
       <Footer locale="lt" />
+      <CookieBanner />
     </main>
   );
 }
