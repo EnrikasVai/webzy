@@ -2,47 +2,15 @@
 
 import { useState } from "react";
 import { HiChevronDown } from "react-icons/hi";
+import { useT } from "./LocaleProvider";
 
-const faqs = [
-  {
-    question: "Nuo ko pradėti?",
-    answer:
-      "Viskas prasideda nuo nemokamos konsultacijos. Susisiekite su mumis, papasakokite apie savo idėją, o mes pasiūlysime geriausią sprendimą.",
-  },
-  {
-    question: "Kokių tipų svetaines kuriate?",
-    answer:
-      "Kuriame visų tipų svetaines – nuo reprezentacinių iki el. parduotuvių, tinklaraščių, landing puslapių ir specializuotų web platformų.",
-  },
-  {
-    question: "Kiek laiko užtrunka sukurti tinklalapį?",
-    answer:
-      "Priklausomai nuo sudėtingumo, svetainės sukūrimas užtrunka nuo 1 iki 4 savaičių. Paprastą vieno puslapio svetainę galime sukurti per 1-2 savaites.",
-  },
-  {
-    question: "Kiek kainuoja sukurti svetainę?",
-    answer:
-      "Kainos prasideda nuo 299€ už vieno puslapio svetainę. Kiekvienam projektui pateikiame individualų pasiūlymą pagal jūsų poreikius.",
-  },
-  {
-    question: "Ar galite atnaujinti seną mano svetainę?",
-    answer:
-      "Taip, dažnai atnaujiname ir perkuriame senas svetaines. Suteikiame joms šiuolaikišką dizainą, geresnį veikimą ir naujas funkcijas.",
-  },
-  {
-    question: "Ar talpinimas (hostingas) įskaičiuotas?",
-    answer:
-      "Talpinimas nėra įskaičiuotas į kainą, tačiau rekomenduojame patikimus hostingo tiekėjus ir galime padėti susiorientuoti.",
-  },
-  {
-    question: "Ar kuriate unikalius dizainus, ar naudojate šablonus?",
-    answer:
-      "Siūlome abu variantus. Galime sukurti unikalų dizainą nuo nulio arba pasinaudoti šablonais – viskas priklauso nuo jūsų biudžeto ir poreikių.",
-  },
+const faqKeys = [
+  "kl1", "kl2", "kl3", "kl4", "kl5", "kl6", "kl7",
 ];
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
+  const t = useT();
 
   const toggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -52,12 +20,11 @@ export default function FAQ() {
     <section id="duk" className="py-20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="section-title">
-          Dažniausiai užduodami{" "}
-          <span className="text-primary-600">klausimai</span>
+          {t("faq.pavadinimas")}
         </h2>
 
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
+          {faqKeys.map((key, index) => (
             <div
               key={index}
               className="bg-white dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden"
@@ -66,7 +33,7 @@ export default function FAQ() {
                 className="w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                 onClick={() => toggle(index)}
               >
-                <span>{faq.question}</span>
+                <span>{t(`faq.${key}`)}</span>
                 <HiChevronDown
                   className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${
                     openIndex === index ? "rotate-180" : ""
@@ -81,7 +48,7 @@ export default function FAQ() {
                 }`}
               >
                 <p className="px-6 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed">
-                  {faq.answer}
+                  {t(`faq.${key}ats`)}
                 </p>
               </div>
             </div>

@@ -15,11 +15,11 @@ export const metadata = {
 export default function KontaktaiPage() {
   return (
     <main>
-      <Navbar />
+      <Navbar locale="lt" />
       <div className="pt-20">
         <Contact />
       </div>
-      <Footer />
+      <Footer locale="lt" />
     </main>
   );
 }

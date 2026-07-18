@@ -14,7 +14,7 @@ export const metadata = {
 export default function PrivatumoPolitikaPage() {
   return (
     <main>
-      <Navbar />
+      <Navbar locale="lt" />
       <section className="pt-32 pb-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-8">
@@ -83,7 +83,7 @@ export default function PrivatumoPolitikaPage() {
           </div>
         </div>
       </section>
-      <Footer />
+      <Footer locale="lt" />
     </main>
   );
 }

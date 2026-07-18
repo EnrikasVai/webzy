@@ -6,42 +6,84 @@ import {
   HiMail,
   HiLocationMarker,
   HiPaperAirplane,
+  HiExclamationCircle,
 } from "react-icons/hi";
 
+import { useT } from "./LocaleProvider";
+
 export default function Contact() {
+  const t = useT();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+  const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
+  const validate = () => {
+    const newErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Vardas yra privalomas";
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = "Vardas per trumpas";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "El. paštas yra privalomas";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+      newErrors.email = "Neteisingas el. pašto formatas";
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Žinutė yra privaloma";
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = "Žinutė per trumpa (min. 10 simbolių)";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    // Clear error on typing
+    if (errors[name]) {
+      setErrors({ ...errors, [name]: "" });
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!validate()) return;
     setLoading(true);
-    // Simulate form submission
+    // TODO: send email via Resend / API route
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
       setFormData({ name: "", email: "", message: "" });
+      setErrors({});
     }, 1500);
   };
+
+  const inputClass = (field) =>
+    `w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:border-transparent outline-none transition-all ${
+      errors[field]
+        ? "border-red-500 focus:ring-red-500 bg-red-50 dark:bg-red-900/10"
+        : "border-gray-300 focus:ring-primary-500"
+    }`;
 
   return (
     <section id="kontaktai" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="section-title">
-          Pirma konsultacija –{" "}
-          <span className="text-primary-600">nemokamai!</span>
+          {t("contact.pavadinimas")}
         </h2>
         <p className="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 -mt-8">
-          Sužinokite, kaip galime padėti jūsų verslui. Užpildykite formą ir mes
-          susisieksime per 24 val.
+          {t("contact.aprasymas")}
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
@@ -49,65 +91,80 @@ export default function Contact() {
           <div className="card">
             {submitted ? (
               <div className="text-center py-12">
-                <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <HiPaperAirplane className="w-8 h-8 text-accent-600 rotate-45" />
+                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <HiPaperAirplane className="w-8 h-8 text-primary-600 rotate-45" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  Ačiū! Jūsų užklausa gauta.
+                  {t("contact.aciu")}
                 </h3>
                 <p className="text-gray-600">
-                  Susisieksime su jumis artimiausiu metu.
+                  {t("contact.susisieksime")}
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
                   className="mt-6 text-primary-600 font-semibold hover:underline"
                 >
-                  Siųsti dar vieną užklausą
+                  {t("contact.siustiDar")}
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Vardas
+                    {t("contact.vardas")} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    required
-                    placeholder="Jūsų vardas"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                    placeholder={t("contact.vardasPlaceholder")}
+                    className={inputClass("name")}
                   />
+                  {errors.name && (
+                    <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
+                      <HiExclamationCircle className="w-4 h-4" />
+                      {errors.name}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    El. paštas
+                    {t("contact.pastas")} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    required
-                    placeholder="jūsų@pastas.lt"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                    placeholder={t("contact.pastasPlaceholder")}
+                    className={inputClass("email")}
                   />
+                  {errors.email && (
+                    <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
+                      <HiExclamationCircle className="w-4 h-4" />
+                      {errors.email}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Žinutė
+                    {t("contact.zinute")} <span className="text-red-500">*</span>
                   </label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    required
                     rows={4}
-                    placeholder="Papasakokite apie savo projektą..."
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all resize-none"
+                    placeholder={t("contact.zinutePlaceholder")}
+                    className={inputClass("message")}
                   />
+                  {errors.message && (
+                    <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
+                      <HiExclamationCircle className="w-4 h-4" />
+                      {errors.message}
+                    </p>
+                  )}
                 </div>
                 <button
                   type="submit"
@@ -118,7 +175,7 @@ export default function Contact() {
                     <span className="inline-block w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                   ) : (
                     <>
-                      Siųsti užklausą
+                      {t("contact.siusti")}
                       <HiPaperAirplane className="w-4 h-4 rotate-45" />
                     </>
                   )}
@@ -134,7 +191,7 @@ export default function Contact() {
                 <HiPhone className="w-6 h-6 text-primary-600" />
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white">Telefonas</h4>
+                <h4 className="font-semibold text-gray-900 dark:text-white">{t("contact.telefonas")}</h4>
                 <p className="text-gray-600 dark:text-gray-400">+37062202273</p>
               </div>
             </a>
@@ -143,7 +200,7 @@ export default function Contact() {
                 <HiMail className="w-6 h-6 text-primary-600" />
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white">El. paštas</h4>
+                <h4 className="font-semibold text-gray-900 dark:text-white">{t("contact.pastas")}</h4>
                 <p className="text-gray-600 dark:text-gray-400">info@webzy.lt</p>
               </div>
             </a>

@@ -1,67 +1,41 @@
+"use client";
+
 import { HiCheck, HiBadgeCheck } from "react-icons/hi";
 import AnimatedOnScroll from "./AnimatedOnScroll";
+import { useT } from "./LocaleProvider";
 
 const plans = [
   {
-    name: "Vieno puslapio svetainė",
+    key: "vienoPuslapio",
     price: "299",
-    badge: "Tinka: individualiems paslaugų teikėjams",
     popular: false,
-    features: [
-      "Turinio valdymo sistema (CMS)",
-      "Pristatomasis dizainas",
-      "Kontaktų forma",
-      "Nuotraukų galerija",
-      "Pradinės informacijos įkėlimas",
-      "Vidinis SEO",
-      "Įgyvendinimas per 1-2 sav.",
-    ],
   },
   {
-    name: "Reprezentacinė svetainė",
+    key: "reprezentacine",
     price: "399",
-    badge: "Tinka: smulkiam ir vidutiniam verslui",
     popular: true,
-    features: [
-      "Visos vieno puslapio svetainės funkcijos",
-      "Išplėstinė struktūra (iki 6 psl.)",
-      "Daugiaakalbystė (LT, EN, ES)",
-      "Individualus dizaino pritaikymas",
-      "Socialinių tinklų integracija",
-      "Profesionalus turinio išdėstymas",
-      "Įgyvendinimo trukmė: 2-3 sav.",
-    ],
   },
   {
-    name: "Individualus web sprendimas",
+    key: "individualus",
     price: "549+",
-    badge: "Tinka: parduotuvėms, kompleksiniams sprendimams",
     popular: false,
-    features: [
-      "Visos reprezentacinės svetainės funkcijos",
-      "Prekių / paslaugų katalogas",
-      "Mokėjimų integracijos (Paysera, Stripe, PayPal)",
-      "Produktų filtrai ir paieška",
-      "Atsargų valdymas",
-      "Galimybė plėsti į dropshipping ar B2B",
-      "Įgyvendinimas nuo 2-3 sav.",
-    ],
   },
 ];
 
 export default function Pricing() {
+  const t = useT();
   return (
     <section id="kainos" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedOnScroll animation="fade-in-up">
           <h2 className="section-title">
-            Mūsų <span className="text-primary-600">Kainos</span>
+            <span>{t("pricing.pavadinimas1")} </span>
+            <span className="text-primary-600">{t("pricing.pavadinimas2")}</span>
           </h2>
         </AnimatedOnScroll>
         <AnimatedOnScroll animation="fade-in-up" delay={0.1}>
           <p className="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 -mt-8">
-            Skaidrūs įkainiai be paslėptų mokesčių. Kiekvienam biudžetui
-            pritaikytas sprendimas.
+            {t("pricing.aprasymas")}
           </p>
         </AnimatedOnScroll>
 
@@ -78,34 +52,32 @@ export default function Pricing() {
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-600 text-white text-sm font-semibold px-4 py-1 rounded-full flex items-center gap-1">
                   <HiBadgeCheck className="w-4 h-4" />
-                  POPULIARIAUSIAS
+                  {t("pricing.populariausias")}
                 </div>
               )}
 
               <div className="text-center mb-6 mt-2">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                  {plan.name}
+                  {t(`pricing.${plan.key}`)}
                 </h3>
                 <div className="text-4xl font-extrabold text-primary-600">
                   €{plan.price}
                 </div>
-                <span className="text-sm text-gray-500 dark:text-gray-400">vienkartinis mokestis</span>
-              </div>
-
-              {/* Badge */}
-              <div className="bg-primary-50 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 text-sm font-medium text-center px-3 py-2 rounded-lg mb-6">
-                {plan.badge}
+                <span className="text-sm text-gray-500 dark:text-gray-400">{t("pricing.vienkartinis")}</span>
               </div>
 
               {/* Features */}
               <ul className="space-y-3 flex-1 mb-8">
-                {plan.features.map((feature, i) => (
+                {t(`pricing.${plan.key}Features`).map((feature, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-300">
                     <HiCheck className="w-5 h-5 text-accent-500 flex-shrink-0 mt-0.5" />
                     {feature}
                   </li>
                 ))}
               </ul>
+              <div className="bg-primary-50 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 text-sm font-medium text-center px-3 py-2 rounded-lg mb-6">
+                {t(`pricing.${plan.key}Tinka`)}
+              </div>
 
               <a
                 href="#kontaktai"
@@ -115,7 +87,7 @@ export default function Pricing() {
                     : "btn-outline"
                 }`}
               >
-                Pasirinkti planą
+                {t("pricing.pasirinkti")}
               </a>
             </div>
             </AnimatedOnScroll>

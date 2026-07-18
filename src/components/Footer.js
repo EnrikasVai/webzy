@@ -1,16 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { HiMail } from "react-icons/hi";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-
-const footerLinks = [
-  { name: "Paslaugos", href: "/#paslaugos" },
-  { name: "Darbai", href: "/#darbai" },
-  { name: "Apie mus", href: "/apie-mus" },
-  { name: "Kainos", href: "/#kainos" },
-  { name: "DUK", href: "/#duk" },
-  { name: "Kontaktai", href: "/#kontaktai" },
-  { name: "Privatumo politika", href: "/privatumo-politika" },
-];
+import { useT } from "./LocaleProvider";
 
 const socialLinks = [
   {
@@ -30,7 +23,20 @@ const socialLinks = [
   },
 ];
 
-export default function Footer() {
+export default function Footer({ locale = "lt" }) {
+  const t = useT();
+  const prefix = locale === "lt" ? "" : `/${locale}`;
+
+  const footerLinks = [
+    { name: t("nav.paslaugos"), href: `${prefix}/#paslaugos` },
+    { name: t("nav.musuDarbai"), href: `${prefix}/#darbai` },
+    { name: t("nav.apieMus"), href: `${prefix}/apie-mus` },
+    { name: t("nav.kainos"), href: `${prefix}/#kainos` },
+    { name: t("nav.duk"), href: `${prefix}/#duk` },
+    { name: t("nav.kontaktai"), href: `${prefix}/#kontaktai` },
+    { name: t("footer.privatumoPolitika"), href: `${prefix}/privatumo-politika` },
+  ];
+
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

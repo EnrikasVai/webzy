@@ -1,65 +1,57 @@
+"use client";
+
 import {
   HiShoppingCart,
-  HiGlobe,
+  HiCode,
   HiColorSwatch,
-  HiChartBar,
-  HiShieldCheck,
+  HiTrendingUp,
+  HiCog,
   HiLightningBolt,
 } from "react-icons/hi";
 import AnimatedOnScroll from "./AnimatedOnScroll";
+import { useT } from "./LocaleProvider";
 
 const services = [
   {
     icon: HiShoppingCart,
-    title: "Elektroninių parduotuvių kūrimas",
-    description:
-      "Pilnai funkcionalios el. parduotuvės su mokėjimo sprendimais (Paysera, Stripe, PayPal), prekių valdymu, katalogais ir užsakymų sistema.",
+    key: "elParduotuves",
   },
   {
-    icon: HiGlobe,
-    title: "Internetinių svetainių kūrimas",
-    description:
-      "Nuo vieno puslapio vizitinių kortelių iki specializuotų web sprendimų. Kiekviena svetainė kuriama pagal jūsų poreikius.",
+    icon: HiCode,
+    key: "svetainiuKurimas",
   },
   {
     icon: HiColorSwatch,
-    title: "Web dizaino darbai",
-    description:
-      "Šiuolaikiškas, vartotojui patrauklus dizainas, atitinkantis jūsų prekės ženklo stilistiką ir verslo tikslus.",
+    key: "dizainas",
   },
   {
-    icon: HiChartBar,
-    title: "SEO Paslaugos",
-    description:
-      "Techninis SEO, raktažodžių analizė, turinio optimizavimas paieškos sistemoms. Padėkite klientams jus rasti.",
+    icon: HiTrendingUp,
+    key: "seo",
   },
   {
-    icon: HiShieldCheck,
-    title: "Svetainių priežiūra",
-    description:
-      "Reguliarūs atnaujinimai, saugumo užtikrinimas, greičio optimizavimas ir techninė priežiūra.",
+    icon: HiCog,
+    key: "prieziura",
   },
   {
     icon: HiLightningBolt,
-    title: "Pilnas optimizavimas",
-    description:
-      "Svetainės greičio, struktūros ir vartotojo patirties optimizavimas, kad jūsų lankytojai išliktų.",
+    key: "optimizavimas",
   },
 ];
 
 export default function Services() {
+  const t = useT();
   return (
     <section id="paslaugos" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedOnScroll animation="fade-in-up">
           <h2 className="section-title">
-            Mūsų <span className="text-primary-600">Paslaugos</span>
+            <span>{t("services.pavadinimas1")} </span>
+            <span className="text-primary-600">{t("services.pavadinimas2")}</span>
           </h2>
         </AnimatedOnScroll>
         <AnimatedOnScroll animation="fade-in-up" delay={0.1}>
           <p className="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 -mt-8">
-            Siūlome pilną web sprendimų spektrą – nuo dizaino iki techninės
-            priežiūros
+            {t("services.aprasymas")}
           </p>
         </AnimatedOnScroll>
 
@@ -71,10 +63,10 @@ export default function Services() {
                 <service.icon className="w-7 h-7 text-primary-600 dark:text-primary-400 group-hover:text-white transition-colors duration-300" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                {service.title}
+                {t(`services.${service.key}`)}
               </h3>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                {service.description}
+                {t(`services.${service.key}Desc`)}
               </p>
             </div>
             </AnimatedOnScroll>

@@ -1,7 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 import Link from "next/link";
-import { FiArrowRight, FiTarget, FiEye, FiUsers, FiAward } from "react-icons/fi";
+import { FiArrowRight, FiTarget, FiEye, FiUsers, FiAward, FiSearch, FiZap, FiSun } from "react-icons/fi";
 
 export const metadata = {
   title: "Apie mus",
@@ -35,7 +36,7 @@ const teamMembers = [
 export default function ApieMusPage() {
   return (
     <main>
-      <Navbar />
+      <Navbar locale="lt" />
 
       {/* Hero Section */}
       <section className="relative pt-36 pb-24 overflow-hidden">
@@ -59,7 +60,14 @@ export default function ApieMusPage() {
               <div className="relative">
                 <div className="w-80 h-80 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 opacity-20 blur-3xl absolute -top-10 -right-10" />
                 <div className="relative w-72 h-72 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center shadow-2xl">
-                  <FiAward className="w-24 h-24 text-white/90" />
+                  <Image
+                    src="/icon.webp"
+                    alt="WEBZY logo"
+                    width={280}
+                    height={90}
+                    className="opacity-90 brightness-0 invert"
+                    priority
+                  />
                 </div>
               </div>
             </div>
@@ -121,22 +129,22 @@ export default function ApieMusPage() {
               {
                 title: "Kokybė",
                 desc: "Kiekviena detalė yra svarbi – nuo dizaino iki kodo kokybės.",
-                icon: "🎯",
+                icon: FiAward,
               },
               {
                 title: "Skaidrumas",
                 desc: "Jokių paslėptų kaštų. Aiškūs terminai ir atvira komunikacija.",
-                icon: "🔍",
+                icon: FiSearch,
               },
               {
                 title: "Efektyvumas",
                 desc: "Greiti ir kokybiški sprendimai, atitinkantys jūsų lūkesčius.",
-                icon: "⚡",
+                icon: FiZap,
               },
               {
                 title: "Inovatyvumas",
                 desc: "Naudojame naujausias technologijas, kad jūsų svetainė būtų konkurencinga.",
-                icon: "💡",
+                icon: FiSun,
               },
             ].map((item, index) => (
               <div
@@ -144,7 +152,9 @@ export default function ApieMusPage() {
                 className="card group hover:-translate-y-1 animate-fade-in text-center"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <span className="text-4xl block mb-4">{item.icon}</span>
+                <div className="w-14 h-14 bg-primary-100 dark:bg-primary-900/50 rounded-xl flex items-center justify-center mx-auto mb-5 group-hover:bg-primary-600 dark:group-hover:bg-primary-600 transition-colors duration-300">
+                  <item.icon className="w-7 h-7 text-primary-600 dark:text-primary-400 group-hover:text-white transition-colors duration-300" />
+                </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
                   {item.title}
                 </h3>
@@ -263,7 +273,7 @@ export default function ApieMusPage() {
         </div>
       </section>
 
-      <Footer />
+      <Footer locale="lt" />
     </main>
   );
 }

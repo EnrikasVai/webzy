@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import { HiStar } from "react-icons/hi";
+import { useT } from "./LocaleProvider";
 
 export default function Hero() {
+  const t = useT();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background gradient */}
@@ -16,28 +21,23 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
         {/* Rating badge */}
         <div className="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-full px-4 py-2 mb-8 shadow-sm animate-fade-in-down">
-          <div className="flex text-yellow-400">
-            {[...Array(5)].map((_, i) => (
-              <HiStar key={i} className="w-4 h-4 animate-wiggle" style={{ animationDelay: `${i * 0.1}s` }} />
-            ))}
-          </div>
+          <HiStar className="w-5 h-5 text-yellow-400 animate-pulse-soft" />
           <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-            4.9 | Daugiau nei 30 patenkintų klientų!
+            {t("hero.reitingas")}
           </span>
         </div>
 
         {/* Main heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white leading-tight mb-6 animate-fade-in-up">
-          Profesionalios interneto svetainės,
+          {t("hero.pavadinimas1")}
           <br />
           <span className="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent bg-[length:200%_100%] animate-shimmer relative overflow-hidden inline-block pb-1">
-            e-komercijos ir kiti web sprendimai
+            {t("hero.pavadinimas2")}
           </span>
         </h1>
 
         <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-          Kuriama modernias, greitas ir efektyvias svetaines, kurios padeda jūsų
-          verslui augti. Nuo idėjos iki pilno įgyvendinimo.
+          {t("hero.aprasymas")}
         </p>
 
         {/* CTA button */}
@@ -46,7 +46,7 @@ export default function Hero() {
           className="btn-primary text-lg inline-block animate-scale-in hover:scale-105 transition-transform duration-300"
           style={{ animationDelay: "0.3s" }}
         >
-          Nemokama konsultacija
+          {t("hero.nemokamaKonsultacija")}
         </a>
 
         {/* Stats */}
@@ -55,26 +55,26 @@ export default function Hero() {
             <div className="text-3xl md:text-4xl font-bold text-primary-600 group-hover:scale-110 transition-transform duration-300">
               30+
             </div>
-            <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">Patenkintų klientų</div>
+            <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">{t("hero.patenkintuKlientu")}</div>
           </div>
           <div className="text-center group">
             <div className="text-3xl md:text-4xl font-bold text-primary-600 group-hover:scale-110 transition-transform duration-300">
               50+
             </div>
-            <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">Sukurtų projektų</div>
+            <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">{t("hero.sukurtuProjektu")}</div>
           </div>
           <div className="text-center col-span-2 md:col-span-1 group">
             <div className="text-3xl md:text-4xl font-bold text-primary-600 group-hover:scale-110 transition-transform duration-300">
               4.9
             </div>
-            <div className="text-sm text-gray-500 mt-1">Įvertinimas</div>
+            <div className="text-sm text-gray-500 mt-1">{t("hero.ivertinimas")}</div>
           </div>
         </div>
 
         {/* Technology logos */}
         <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
           <p className="text-sm text-gray-400 dark:text-gray-500 mb-6">
-            Dirbame su šiuolaikinėmis technologijomis
+            {t("hero.dirbameSu")}
           </p>
           {/* Desktop: 2 rows of 7, Mobile: auto wrap */}
           <div className="flex flex-col gap-6 md:gap-4 items-center">
@@ -84,8 +84,8 @@ export default function Hero() {
                 <Image
                   src="/react.svg"
                   alt="React"
-                  width={32}
-                  height={32}
+                  width={48}
+                  height={48}
                   className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
                 />
                 <span className="text-xs text-gray-400">React</span>
@@ -94,8 +94,8 @@ export default function Hero() {
                 <Image
                   src="/laravel.svg"
                   alt="Laravel"
-                  width={32}
-                  height={32}
+                  width={48}
+                  height={48}
                   className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
                 />
                 <span className="text-xs text-gray-400">Laravel</span>
@@ -104,8 +104,8 @@ export default function Hero() {
                 <Image
                   src="/shopify.svg"
                   alt="Shopify"
-                  width={32}
-                  height={32}
+                  width={48}
+                  height={48}
                   className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
                 />
                 <span className="text-xs text-gray-400">Shopify</span>
@@ -114,8 +114,8 @@ export default function Hero() {
                 <Image
                   src="/wordpress-icon.svg"
                   alt="WordPress"
-                  width={32}
-                  height={32}
+                  width={48}
+                  height={48}
                   className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
                 />
                 <span className="text-xs text-gray-400">WordPress</span>
@@ -124,8 +124,8 @@ export default function Hero() {
                 <Image
                   src="/tailwindcss-icon.svg"
                   alt="Tailwind CSS"
-                  width={32}
-                  height={32}
+                  width={48}
+                  height={48}
                   className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
                 />
                 <span className="text-xs text-gray-400">Tailwind</span>
@@ -134,8 +134,8 @@ export default function Hero() {
                 <Image
                   src="/nodejs-icon.svg"
                   alt="Node.js"
-                  width={32}
-                  height={32}
+                  width={48}
+                  height={48}
                   className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
                 />
                 <span className="text-xs text-gray-400">Node.js</span>
@@ -144,8 +144,8 @@ export default function Hero() {
                 <Image
                   src="/vue.svg"
                   alt="Vue.js"
-                  width={32}
-                  height={32}
+                  width={48}
+                  height={48}
                   className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
                 />
                 <span className="text-xs text-gray-400">Vue.js</span>
@@ -157,8 +157,8 @@ export default function Hero() {
                 <Image
                   src="/javascript.svg"
                   alt="JavaScript"
-                  width={32}
-                  height={32}
+                  width={48}
+                  height={48}
                   className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
                 />
                 <span className="text-xs text-gray-400">JavaScript</span>
@@ -167,8 +167,8 @@ export default function Hero() {
                 <Image
                   src="/html-5.svg"
                   alt="HTML5"
-                  width={32}
-                  height={32}
+                  width={48}
+                  height={48}
                   className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
                 />
                 <span className="text-xs text-gray-400">HTML5</span>
@@ -177,8 +177,8 @@ export default function Hero() {
                 <Image
                   src="/php.svg"
                   alt="PHP"
-                  width={32}
-                  height={32}
+                  width={48}
+                  height={48}
                   className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
                 />
                 <span className="text-xs text-gray-400">PHP</span>
@@ -187,8 +187,8 @@ export default function Hero() {
                 <Image
                   src="/figma.svg"
                   alt="Figma"
-                  width={32}
-                  height={32}
+                  width={48}
+                  height={48}
                   className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
                 />
                 <span className="text-xs text-gray-400">Figma</span>
@@ -197,8 +197,8 @@ export default function Hero() {
                 <Image
                   src="/adobe-icon.svg"
                   alt="Adobe"
-                  width={32}
-                  height={32}
+                  width={48}
+                  height={48}
                   className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
                 />
                 <span className="text-xs text-gray-400">Adobe</span>
@@ -207,8 +207,8 @@ export default function Hero() {
                 <Image
                   src="/codeigniter-icon.svg"
                   alt="CodeIgniter"
-                  width={32}
-                  height={32}
+                  width={48}
+                  height={48}
                   className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
                 />
                 <span className="text-xs text-gray-400">CodeIgniter</span>
@@ -217,8 +217,8 @@ export default function Hero() {
                 <Image
                   src="/symfony.svg"
                   alt="Symfony"
-                  width={32}
-                  height={32}
+                  width={48}
+                  height={48}
                   className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
                 />
                 <span className="text-xs text-gray-400">Symfony</span>

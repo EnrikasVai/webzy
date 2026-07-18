@@ -4,20 +4,26 @@ import { useState, useEffect } from "react";
 import { HiMenu, HiX, HiSun, HiMoon } from "react-icons/hi";
 import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
+import { useT } from "./LocaleProvider";
+import LanguageSwitcher from "./LanguageSwitcher";
 
-const navLinks = [
-  { name: "Paslaugos", href: "/#paslaugos" },
-  { name: "Mūsų darbai", href: "/#darbai" },
-  { name: "Apie mus", href: "/apie-mus" },
-  { name: "Kainos", href: "/#kainos" },
-  { name: "DUK", href: "/#duk" },
-  { name: "Kontaktai", href: "/kontaktai" },
-];
-
-export default function Navbar() {
+export default function Navbar({ locale = "lt" }) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { isDark, toggleTheme } = useTheme();
+  const t = useT();
+
+  const prefix = locale === "lt" ? "" : `/${locale}`;
+
+  const navLinks = [
+    { name: t("nav.pradinis"), href: `${prefix}/` },
+    { name: t("nav.paslaugos"), href: `${prefix}/#paslaugos` },
+    { name: t("nav.musuDarbai"), href: `${prefix}/#darbai` },
+    { name: t("nav.apieMus"), href: `${prefix}/apie-mus` },
+    { name: t("nav.kainos"), href: `${prefix}/#kainos` },
+    { name: t("nav.duk"), href: `${prefix}/#duk` },
+    { name: t("nav.kontaktai"), href: `${prefix}/kontaktai` },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +44,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center">
+          <a href={prefix || "/"} className="flex items-center">
             <Image
               src="/icon.webp"
               alt="WEBZY"
@@ -61,6 +67,9 @@ export default function Navbar() {
               </a>
             ))}
 
+            {/* Language switcher */}
+            <LanguageSwitcher />
+
             {/* Theme toggle */}
             <button
               onClick={toggleTheme}
@@ -75,15 +84,16 @@ export default function Navbar() {
             </button>
 
             <a
-              href="/#kontaktai"
+              href={`${prefix}/#kontaktai`}
               className="btn-primary text-sm !py-2 !px-5"
             >
-              Nemokama konsultacija
+              {t("nav.nemokamaKonsultacija")}
             </a>
           </div>
 
           {/* Mobile: theme toggle + hamburger */}
           <div className="flex items-center gap-2 md:hidden">
+            <LanguageSwitcher />
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 transition-all"
@@ -124,11 +134,11 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="/#kontaktai"
+            href={`${prefix}/#kontaktai`}
             onClick={() => setIsOpen(false)}
             className="block text-center btn-primary text-sm !py-2 !px-5 mt-3"
           >
-            Nemokama konsultacija
+            {t("nav.nemokamaKonsultacija")}
           </a>
         </div>
       </div>
