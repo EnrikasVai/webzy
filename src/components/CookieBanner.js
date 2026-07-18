@@ -33,7 +33,7 @@ export default function CookieBanner() {
             href="/privatumo-politika"
             className="text-primary-600 hover:text-primary-700 underline ml-1 whitespace-nowrap"
           >
-            {t("cookie.sužinotiDaugiau")}
+            {t("cookie.suZinoti")}
           </a>
         </p>
         <div className="flex items-center gap-2 flex-shrink-0">
