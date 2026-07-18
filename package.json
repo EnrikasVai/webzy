@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "pages:build": "npx @opennextjs/cloudflare build && cp .open-next/worker.js .open-next/_worker.js",
+    "pages:build": "npx @opennextjs/cloudflare build && cp .open-next/worker.js .open-next/_worker.js && cd .open-next/assets && tar cf - . | (cd .. && tar xf -) && cd ../.. && rm -rf .open-next/assets",
     "pages:dev": "npx wrangler pages dev .opennext/cloudflare",
     "pages:deploy": "npm run pages:build && wrangler pages deploy .opennext/cloudflare --project-name=webzy"
   },
