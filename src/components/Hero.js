@@ -7,6 +7,23 @@ import { useT } from "./LocaleProvider";
 export default function Hero() {
   const t = useT();
 
+  const techItems = [
+    { src: "/react.svg", label: "React" },
+    { src: "/laravel.svg", label: "Laravel" },
+    { src: "/shopify.svg", label: "Shopify" },
+    { src: "/wordpress-icon.svg", label: "WordPress" },
+    { src: "/tailwindcss-icon.svg", label: "Tailwind" },
+    { src: "/nodejs-icon.svg", label: "Node.js" },
+    { src: "/vue.svg", label: "Vue.js" },
+    { src: "/javascript.svg", label: "JavaScript" },
+    { src: "/html-5.svg", label: "HTML5" },
+    { src: "/php.svg", label: "PHP" },
+    { src: "/figma.svg", label: "Figma" },
+    { src: "/adobe-icon.svg", label: "Adobe" },
+    { src: "/codeigniter-icon.svg", label: "CodeIgniter" },
+    { src: "/symfony.svg", label: "Symfony" },
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background gradient */}
@@ -76,154 +93,23 @@ export default function Hero() {
           <p className="text-sm text-gray-400 dark:text-gray-500 mb-6">
             {t("hero.dirbameSu")}
           </p>
-          {/* Desktop: 2 rows of 7, Mobile: auto wrap */}
-          <div className="flex flex-col gap-6 md:gap-4 items-center">
-            {/* Row 1 */}
-            <div className="flex items-center justify-center gap-6 md:gap-10 flex-wrap">
-              <div className="flex flex-col items-center gap-1 group hover:-translate-y-1 transition-all duration-300">
+          {/* Mobile: one flex-wrap row, Desktop: 2 rows of 7 via grid */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-10 md:grid md:grid-cols-7 md:justify-items-center">
+            {techItems.map((tech) => (
+              <div
+                key={tech.label}
+                className="flex flex-col items-center gap-1 group hover:-translate-y-1 transition-all duration-300"
+              >
                 <Image
-                  src="/react.svg"
-                  alt="React"
-                  width={48}
-                  height={48}
-                  className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
+                  src={tech.src}
+                  alt={tech.label}
+                  width={36}
+                  height={36}
+                  className="md:w-12 md:h-12 opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
                 />
-                <span className="text-xs text-gray-400">React</span>
+                <span className="text-[10px] md:text-xs text-gray-400">{tech.label}</span>
               </div>
-              <div className="flex flex-col items-center gap-1 group">
-                <Image
-                  src="/laravel.svg"
-                  alt="Laravel"
-                  width={48}
-                  height={48}
-                  className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
-                />
-                <span className="text-xs text-gray-400">Laravel</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 group">
-                <Image
-                  src="/shopify.svg"
-                  alt="Shopify"
-                  width={48}
-                  height={48}
-                  className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
-                />
-                <span className="text-xs text-gray-400">Shopify</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 group">
-                <Image
-                  src="/wordpress-icon.svg"
-                  alt="WordPress"
-                  width={48}
-                  height={48}
-                  className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
-                />
-                <span className="text-xs text-gray-400">WordPress</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 group">
-                <Image
-                  src="/tailwindcss-icon.svg"
-                  alt="Tailwind CSS"
-                  width={48}
-                  height={48}
-                  className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
-                />
-                <span className="text-xs text-gray-400">Tailwind</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 group">
-                <Image
-                  src="/nodejs-icon.svg"
-                  alt="Node.js"
-                  width={48}
-                  height={48}
-                  className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
-                />
-                <span className="text-xs text-gray-400">Node.js</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 group">
-                <Image
-                  src="/vue.svg"
-                  alt="Vue.js"
-                  width={48}
-                  height={48}
-                  className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
-                />
-                <span className="text-xs text-gray-400">Vue.js</span>
-              </div>
-            </div>
-            {/* Row 2 */}
-            <div className="flex items-center justify-center gap-6 md:gap-10 flex-wrap">
-              <div className="flex flex-col items-center gap-1 group">
-                <Image
-                  src="/javascript.svg"
-                  alt="JavaScript"
-                  width={48}
-                  height={48}
-                  className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
-                />
-                <span className="text-xs text-gray-400">JavaScript</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 group">
-                <Image
-                  src="/html-5.svg"
-                  alt="HTML5"
-                  width={48}
-                  height={48}
-                  className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
-                />
-                <span className="text-xs text-gray-400">HTML5</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 group">
-                <Image
-                  src="/php.svg"
-                  alt="PHP"
-                  width={48}
-                  height={48}
-                  className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
-                />
-                <span className="text-xs text-gray-400">PHP</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 group">
-                <Image
-                  src="/figma.svg"
-                  alt="Figma"
-                  width={48}
-                  height={48}
-                  className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
-                />
-                <span className="text-xs text-gray-400">Figma</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 group">
-                <Image
-                  src="/adobe-icon.svg"
-                  alt="Adobe"
-                  width={48}
-                  height={48}
-                  className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
-                />
-                <span className="text-xs text-gray-400">Adobe</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 group">
-                <Image
-                  src="/codeigniter-icon.svg"
-                  alt="CodeIgniter"
-                  width={48}
-                  height={48}
-                  className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
-                />
-                <span className="text-xs text-gray-400">CodeIgniter</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 group">
-                <Image
-                  src="/symfony.svg"
-                  alt="Symfony"
-                  width={48}
-                  height={48}
-                  className="opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
-                />
-                <span className="text-xs text-gray-400">Symfony</span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

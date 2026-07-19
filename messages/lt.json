@@ -7,6 +7,7 @@
     "kainos": "Kainos",
     "duk": "DUK",
     "kontaktai": "Kontaktai",
+    "blog": "Blogas",
     "nemokamaKonsultacija": "Nemokama konsultacija"
   },
   "hero": {
@@ -127,6 +128,9 @@
     "privatumoPolitika": "Privatumo politika",
     "salygos": "Taisyklės ir sąlygos",
     "socialiniaiTinklai": "Socialiniai tinklai",
+    "nuorodos": "Nuorodos",
+    "sekiteMus": "Sekite mus",
+    "aprasymas": "Profesionalios interneto svetainės, e-komercijos ir kiti web sprendimai. Kurkime kartu.",
     "visosTeises": "Visos teisės saugomos."
   },
   "cookie": {

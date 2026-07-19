@@ -17,17 +17,15 @@ export default function Navbar({ locale = "lt" }) {
 
   const slug = {
     apieMus: locale === "en" ? "about-us" : "apie-mus",
-    kontaktai: locale === "en" ? "contact" : "kontaktai",
+    blog: locale === "en" ? "blog" : "blogas",
   };
 
   const navLinks = [
-    { name: t("nav.pradinis"), href: `${prefix}/` },
     { name: t("nav.paslaugos"), href: `${prefix}/#paslaugos` },
     { name: t("nav.musuDarbai"), href: `${prefix}/#darbai` },
     { name: t("nav.apieMus"), href: `${prefix}/${slug.apieMus}` },
     { name: t("nav.kainos"), href: `${prefix}/#kainos` },
-    { name: t("nav.duk"), href: `${prefix}/#duk` },
-    { name: t("nav.kontaktai"), href: `${prefix}/${slug.kontaktai}` },
+    { name: t("nav.blog"), href: `${prefix}/${slug.blog}` },
   ];
 
   useEffect(() => {
@@ -61,7 +59,7 @@ export default function Navbar({ locale = "lt" }) {
           </a>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -97,7 +95,7 @@ export default function Navbar({ locale = "lt" }) {
           </div>
 
           {/* Mobile: theme toggle + hamburger */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-2 lg:hidden">
             <LanguageSwitcher />
             <button
               onClick={toggleTheme}
@@ -123,7 +121,7 @@ export default function Navbar({ locale = "lt" }) {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden transition-all duration-300 overflow-hidden ${
+        className={`lg:hidden transition-all duration-300 overflow-hidden ${
           isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
