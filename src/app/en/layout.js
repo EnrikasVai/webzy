@@ -59,32 +59,22 @@ export default function EnLayout({ children }) {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
+            "@type": "ProfessionalService",
             name: "WEBZY",
             url: "https://webzy.lt/en",
-            logo: "https://webzy.lt/logo.svg",
+            logo: "https://webzy.lt/icon.webp",
             description:
-              "Professional website development from €299.",
-            email: "info@webzy.lt",
-            areaServed: ["LT", "GB", "EU"],
-            priceRange: "€€",
-            foundingDate: "2024",
-            founder: [
-              { "@type": "Person", name: "Enrikas" },
-              { "@type": "Person", name: "Gytis" },
-            ],
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Vilnius",
-              addressCountry: "LT",
+              "Professional website development from €299. E-commerce, web design, SEO optimization.",
+            areaServed: {
+              "@type": "Country",
+              name: "Lithuania",
             },
-            contactPoint: {
-              "@type": "ContactPoint",
-              contactType: "customer service",
-              email: "info@webzy.lt",
-            },
-            sameAs: [
-              "https://www.facebook.com/profile.php?id=61578824250484",
+            priceRange: "from €299",
+            knowsAbout: [
+              "Web Development",
+              "Web Design",
+              "E-Commerce",
+              "SEO",
             ],
           }),
         }}
