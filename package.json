@@ -5,15 +5,18 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "cf:build": "npx opennextjs-cloudflare build && cp .open-next/worker.js .open-next/_worker.js",
+    "cf:build": "npx @cloudflare/next-on-pages@1",
+    "cf:preview": "npm run cf:build && wrangler pages dev .vercel/output/static",
+    "cf:deploy": "npm run cf:build && wrangler pages deploy .vercel/output/static",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@cloudflare/next-on-pages": "^1.13.16",
     "@marsidev/react-turnstile": "^1.5.3",
-    "@opennextjs/cloudflare": "^1.20.1",
+    "@react-email/render": "^2.1.0",
     "@tailwindcss/typography": "^0.5.20",
-    "next": "^15.5.18",
+    "next": "^15.5.2",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-icons": "^5.7.0",

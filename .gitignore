@@ -16,8 +16,10 @@
 # production
 /build
 
-# opennext cloudflare build output
+# cloudflare
 /.open-next/
+/.wrangler/
+/.vercel/
 
 # misc
 .DS_Store
