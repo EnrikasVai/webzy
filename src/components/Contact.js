@@ -4,16 +4,16 @@ import { useState, useRef } from "react";
 import {
   HiPhone,
   HiMail,
-  HiLocationMarker,
   HiPaperAirplane,
   HiExclamationCircle,
 } from "react-icons/hi";
 import { Turnstile } from "@marsidev/react-turnstile";
 
-import { useT } from "./LocaleProvider";
+import { useT, useLocale } from "./LocaleProvider";
 
 export default function Contact() {
   const t = useT();
+  const { locale } = useLocale();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -29,25 +29,25 @@ export default function Contact() {
     const newErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = "Vardas yra privalomas";
+      newErrors.name = t("contact.klaidaVardasPrivalomas");
     } else if (formData.name.trim().length < 2) {
-      newErrors.name = "Vardas per trumpas";
+      newErrors.name = t("contact.klaidaVardasTrumpas");
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "El. paštas yra privalomas";
+      newErrors.email = t("contact.klaidaPastasPrivalomas");
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
-      newErrors.email = "Neteisingas el. pašto formatas";
+      newErrors.email = t("contact.klaidaPastasFormatas");
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = "Žinutė yra privaloma";
+      newErrors.message = t("contact.klaidaZinutePrivaloma");
     } else if (formData.message.trim().length < 10) {
-      newErrors.message = "Žinutė per trumpa (min. 10 simbolių)";
+      newErrors.message = t("contact.klaidaZinuteTrumpa");
     }
 
     if (!turnstileToken) {
-      newErrors.turnstile = "Prašome patvirtinti, kad nesate robotas";
+      newErrors.turnstile = t("contact.klaidaTurnstile");
     }
 
     setErrors(newErrors);
@@ -204,10 +204,11 @@ export default function Contact() {
                 )}
 
                 {/* Turnstile */}
-                <div>
+                <div className="flex flex-col items-center">
                   <Turnstile
                     ref={turnstileRef}
                     siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                    language={locale === "en" ? "en" : "lt"}
                     onSuccess={(token) => setTurnstileToken(token)}
                     onExpire={() => setTurnstileToken(null)}
                     onError={() => setTurnstileToken(null)}

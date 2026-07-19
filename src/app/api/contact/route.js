@@ -1,5 +1,46 @@
+// Simple in-memory rate limiter
+const rateLimit = new Map();
+const RATE_LIMIT_WINDOW = 10 * 60 * 1000; // 10 minutes
+const RATE_LIMIT_MAX = 3; // max 3 submissions per window
+
+function getClientIP(request) {
+  return (
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    request.headers.get("x-real-ip") ||
+    "unknown"
+  );
+}
+
+function checkRateLimit(ip) {
+  const now = Date.now();
+  const record = rateLimit.get(ip);
+
+  if (!record || now - record.windowStart > RATE_LIMIT_WINDOW) {
+    rateLimit.set(ip, { windowStart: now, count: 1 });
+    return { allowed: true, remaining: RATE_LIMIT_MAX - 1 };
+  }
+
+  if (record.count >= RATE_LIMIT_MAX) {
+    return { allowed: false, remaining: 0 };
+  }
+
+  record.count++;
+  return { allowed: true, remaining: RATE_LIMIT_MAX - record.count };
+}
+
 export async function POST(request) {
   try {
+    // Rate limiting
+    const ip = getClientIP(request);
+    const rateCheck = checkRateLimit(ip);
+
+    if (!rateCheck.allowed) {
+      return Response.json(
+        { error: "Per daug užklausų. Bandykite vėliau." },
+        { status: 429 }
+      );
+    }
+
     const { name, email, message, turnstileToken } = await request.json();
 
     // Validate required fields
@@ -9,6 +50,20 @@ export async function POST(request) {
         { status: 400 }
       );
     }
+
+    // Server-side email format validation
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return Response.json(
+        { error: "Neteisingas el. pašto formatas" },
+        { status: 400 }
+      );
+    }
+
+    // Sanitize inputs (basic XSS protection)
+    const sanitize = (str) => str.replace(/<[^>]*>/g, "").trim();
+    const cleanName = sanitize(name);
+    const cleanEmail = sanitize(email);
+    const cleanMessage = sanitize(message);
 
     // Verify Turnstile token with Cloudflare
     const formData = new URLSearchParams();
@@ -33,7 +88,7 @@ export async function POST(request) {
     // Example with Resend:
     // await resend.emails.send({ ... });
 
-    console.log("Contact form submission:", { name, email, message });
+    console.log("Contact form submission:", { name: cleanName, email: cleanEmail, message: cleanMessage });
 
     return Response.json({ success: true });
   } catch (error) {

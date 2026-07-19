@@ -115,7 +115,14 @@
     "aciu": "Ačiū! Jūsų užklausa gauta.",
     "susisieksime": "Susisieksime su jumis artimiausiu metu.",
     "siustiDar": "Siųsti dar vieną užklausą",
-    "telefonas": "Telefonas"
+    "telefonas": "Telefonas",
+    "klaidaVardasPrivalomas": "Vardas yra privalomas",
+    "klaidaVardasTrumpas": "Vardas per trumpas",
+    "klaidaPastasPrivalomas": "El. paštas yra privalomas",
+    "klaidaPastasFormatas": "Neteisingas el. pašto formatas",
+    "klaidaZinutePrivaloma": "Žinutė yra privaloma",
+    "klaidaZinuteTrumpa": "Žinutė per trumpa (min. 10 simbolių)",
+    "klaidaTurnstile": "Prašome patvirtinti, kad nesate robotas"
   },
   "footer": {
     "reikiaPagalbos": "Reikia pagalbos? Susisiekite dėl nemokamos konsultacijos.",

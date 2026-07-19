@@ -115,7 +115,14 @@
     "aciu": "Thank you! Your request has been received.",
     "susisieksime": "We will contact you shortly.",
     "siustiDar": "Send another request",
-    "telefonas": "Phone"
+    "telefonas": "Phone",
+    "klaidaVardasPrivalomas": "Name is required",
+    "klaidaVardasTrumpas": "Name is too short",
+    "klaidaPastasPrivalomas": "Email is required",
+    "klaidaPastasFormatas": "Invalid email format",
+    "klaidaZinutePrivaloma": "Message is required",
+    "klaidaZinuteTrumpa": "Message is too short (min. 10 characters)",
+    "klaidaTurnstile": "Please confirm you are not a robot"
   },
   "footer": {
     "reikiaPagalbos": "Need help? Contact us for a free consultation.",
