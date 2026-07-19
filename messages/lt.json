@@ -141,7 +141,7 @@
     "visosTeises": "Visos teisės saugomos."
   },
   "cookie": {
-    "tekstas": "Ši svetainė naudoja slapukus, kad užtikrintų geriausią jūsų naršymo patirtį. Taip pat naudojame Google Analytics statistinius slapukus svetainės lankomumo analizei. Sutikdami leidžiate mums juos naudoti.",
+    "tekstas": "Šioje svetainėje naudojame būtinuosius slapukus svetainės veikimui bei saugumui užtikrinti, ir Google Analytics slapukus lankomumo statistikai rinkti. Galite sutikti su visais arba atmesti analitinius.",
     "sutinku": "Sutinku",
     "atmesti": "Atmesti",
     "suZinoti": "Sužinoti daugiau"
