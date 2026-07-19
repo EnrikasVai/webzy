@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import ThemeProvider from "@/components/ThemeProvider";
 import LocaleProvider from "@/components/LocaleProvider";
+import GoogleTagManager from "@/components/GoogleTagManager";
 import ltMessages from "../../messages/lt.json";
 
 const inter = Inter({
@@ -78,6 +79,7 @@ export default function RootLayout({ children }) {
         />
         <ThemeProvider>
           <LocaleProvider locale="lt" messages={ltMessages}>
+            <GoogleTagManager />
             <script
               type="application/ld+json"
               dangerouslySetInnerHTML={{

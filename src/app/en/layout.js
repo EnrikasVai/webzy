@@ -1,5 +1,6 @@
 import LocaleProvider from "@/components/LocaleProvider";
 import CookieBanner from "@/components/CookieBanner";
+import GoogleTagManager from "@/components/GoogleTagManager";
 import enMessages from "../../../messages/en.json";
 
 export const metadata = {
@@ -52,6 +53,7 @@ export const metadata = {
 export default function EnLayout({ children }) {
   return (
     <LocaleProvider locale="en" messages={enMessages}>
+      <GoogleTagManager />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
