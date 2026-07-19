@@ -101,8 +101,8 @@ export default function Contact() {
   const inputClass = (field) =>
     `w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:border-transparent outline-none transition-all ${
       errors[field]
-        ? "border-red-500 focus:ring-red-500 bg-red-50 dark:bg-red-900/10"
-        : "border-gray-300 focus:ring-primary-500"
+        ? "border-red-500 focus:ring-red-500 bg-red-50 dark:bg-red-900/10 dark:text-white"
+        : "border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 focus:ring-primary-500"
     }`;
 
   return (
@@ -139,7 +139,7 @@ export default function Contact() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     {t("contact.vardas")} <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -158,7 +158,7 @@ export default function Contact() {
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     {t("contact.pastas")} <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -177,7 +177,7 @@ export default function Contact() {
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     {t("contact.zinute")} <span className="text-red-500">*</span>
                   </label>
                   <textarea
