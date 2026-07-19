@@ -19,9 +19,27 @@ export function generateMetadata({ params }) {
   return {
     title: post.lt.title,
     description: post.lt.description,
+    alternates: {
+      canonical: `/${post.slug}`,
+      languages: { lt: `/${post.slug}`, en: `/en/${post.enSlug}` },
+    },
     openGraph: {
       title: `${post.lt.title} | WEBZY`,
       description: post.lt.description,
+      type: "article",
+      publishedTime: post.date,
+      url: `https://webzy.lt/${post.slug}`,
+      siteName: "WEBZY",
+      locale: "lt_LT",
+      images: post.lt.image
+        ? [{ url: post.lt.image, width: 1200, height: 630, alt: post.lt.title }]
+        : [{ url: "/og-image.webp", width: 1200, height: 630, alt: post.lt.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.lt.title} | WEBZY`,
+      description: post.lt.description,
+      images: post.lt.image ? [post.lt.image] : ["/og-image.webp"],
     },
   };
 }
@@ -33,6 +51,38 @@ export default function BlogPostPage({ params }) {
   return (
     <main>
       <Navbar locale="lt" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.lt.title,
+            description: post.lt.description,
+            image: post.lt.image
+              ? `https://webzy.lt${post.lt.image}`
+              : "https://webzy.lt/og-image.webp",
+            datePublished: post.date,
+            author: {
+              "@type": "Organization",
+              name: "WEBZY",
+              url: "https://webzy.lt",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "WEBZY",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://webzy.lt/logo.svg",
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://webzy.lt/${post.slug}`,
+            },
+          }),
+        }}
+      />
       <article className="pt-32 pb-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link

@@ -44,10 +44,10 @@ export const metadata = {
     url: "https://webzy.lt",
     images: [
       {
-        url: "/logo.svg",
-        width: 800,
-        height: 600,
-        alt: "WEBZY",
+        url: "/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "WEBZY - Profesionalios interneto svetainės",
       },
     ],
   },
@@ -56,14 +56,13 @@ export const metadata = {
     title: "WEBZY - Profesionalios interneto svetainės",
     description:
       "Profesionalios interneto svetainių kūrimas nuo 299€. E-komercija, dizainas, SEO. Nemokama konsultacija.",
-    images: ["/logo.svg"],
+    images: ["/og-image.webp"],
   },
   robots: {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
-  verification: { google: "G-VXSLNJEHNL" },
 };
 
 export default function RootLayout({ children }) {

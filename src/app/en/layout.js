@@ -28,10 +28,10 @@ export const metadata = {
     url: "https://webzy.lt/en",
     images: [
       {
-        url: "/logo.svg",
-        width: 800,
-        height: 600,
-        alt: "WEBZY",
+        url: "/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "WEBZY - Professional Websites & Web Solutions",
       },
     ],
   },
@@ -40,7 +40,7 @@ export const metadata = {
     title: "WEBZY - Professional Websites & Web Solutions",
     description:
       "Professional website development from €299. E-commerce, design, SEO. Free consultation.",
-    images: ["/logo.svg"],
+    images: ["/og-image.webp"],
   },
   robots: {
     index: true,
@@ -64,7 +64,7 @@ export default function EnLayout({ children }) {
             description:
               "Professional website development from €299.",
             email: "info@webzy.lt",
-            areaServed: "GB",
+            areaServed: ["LT", "GB", "EU"],
             priceRange: "€€",
             foundingDate: "2024",
             founder: [

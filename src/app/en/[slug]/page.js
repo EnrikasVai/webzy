@@ -18,9 +18,27 @@ export function generateMetadata({ params }) {
   return {
     title: post.en.title,
     description: post.en.description,
+    alternates: {
+      canonical: `/en/${post.enSlug}`,
+      languages: { lt: `/${post.slug}`, en: `/en/${post.enSlug}` },
+    },
     openGraph: {
       title: `${post.en.title} | WEBZY`,
       description: post.en.description,
+      type: "article",
+      publishedTime: post.date,
+      url: `https://webzy.lt/en/${post.enSlug}`,
+      siteName: "WEBZY",
+      locale: "en_US",
+      images: post.en.image
+        ? [{ url: post.en.image, width: 1200, height: 630, alt: post.en.title }]
+        : [{ url: "/og-image.webp", width: 1200, height: 630, alt: post.en.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.en.title} | WEBZY`,
+      description: post.en.description,
+      images: post.en.image ? [post.en.image] : ["/og-image.webp"],
     },
   };
 }
@@ -32,6 +50,38 @@ export default function EnBlogPostPage({ params }) {
   return (
     <main>
       <Navbar locale="en" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.en.title,
+            description: post.en.description,
+            image: post.en.image
+              ? `https://webzy.lt${post.en.image}`
+              : "https://webzy.lt/og-image.webp",
+            datePublished: post.date,
+            author: {
+              "@type": "Organization",
+              name: "WEBZY",
+              url: "https://webzy.lt",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "WEBZY",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://webzy.lt/logo.svg",
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://webzy.lt/en/${post.enSlug}`,
+            },
+          }),
+        }}
+      />
       <article className="pt-32 pb-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link

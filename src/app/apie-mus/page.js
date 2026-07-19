@@ -9,10 +9,26 @@ export const metadata = {
   title: "Apie mus",
   description:
     "Susipažinkite su WEBZY komanda. Kuriame profesionalias interneto svetaines, e-komercijos sprendimus ir web dizainą nuo 299€. Patirtis, kokybė ir inovatyvūs sprendimai.",
+  alternates: {
+    canonical: "/apie-mus",
+    languages: { lt: "/apie-mus", en: "/en/about-us" },
+  },
   openGraph: {
     title: "Apie mus | WEBZY",
     description:
       "Susipažinkite su WEBZY komanda. Kuriame profesionalias interneto svetaines nuo 299€.",
+    url: "https://webzy.lt/apie-mus",
+    siteName: "WEBZY",
+    locale: "lt_LT",
+    type: "website",
+    images: [{ url: "/og-image.webp", width: 1200, height: 630, alt: "WEBZY - Apie mus" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Apie mus | WEBZY",
+    description:
+      "Susipažinkite su WEBZY komanda. Kuriame profesionalias interneto svetaines nuo 299€.",
+    images: ["/og-image.webp"],
   },
 };
 
