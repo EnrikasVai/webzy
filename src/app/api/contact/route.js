@@ -1,3 +1,7 @@
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 // Simple in-memory rate limiter
 const rateLimit = new Map();
 const RATE_LIMIT_WINDOW = 10 * 60 * 1000; // 10 minutes
@@ -84,11 +88,41 @@ export async function POST(request) {
       );
     }
 
-    // TODO: send email via Resend / nodemailer / etc.
-    // Example with Resend:
-    // await resend.emails.send({ ... });
+    // Send email via Resend
+    const { error: emailError } = await resend.emails.send({
+      from: `Kontaktinė forma <${process.env.CONTACT_EMAIL_FROM}>`,
+      to: [process.env.CONTACT_EMAIL_TO],
+      replyTo: cleanEmail,
+      subject: `Nauja žinutė iš webzy.lt nuo ${cleanName}`,
+      html: `
+        <h2>Nauja kontaktinės formos žinutė</h2>
+        <table style="border-collapse:collapse;width:100%;max-width:500px">
+          <tr>
+            <td style="padding:8px 12px;background:#f3f4f6;font-weight:600;border:1px solid #e5e7eb">Vardas</td>
+            <td style="padding:8px 12px;border:1px solid #e5e7eb">${cleanName}</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 12px;background:#f3f4f6;font-weight:600;border:1px solid #e5e7eb">El. paštas</td>
+            <td style="padding:8px 12px;border:1px solid #e5e7eb">${cleanEmail}</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 12px;background:#f3f4f6;font-weight:600;border:1px solid #e5e7eb">Žinutė</td>
+            <td style="padding:8px 12px;border:1px solid #e5e7eb">${cleanMessage.replace(/\n/g, "<br>")}</td>
+          </tr>
+        </table>
+        <p style="color:#6b7280;font-size:12px;margin-top:16px">
+          Išsiųsta iš webzy.lt kontaktinės formos
+        </p>
+      `,
+    });
 
-    console.log("Contact form submission:", { name: cleanName, email: cleanEmail, message: cleanMessage });
+    if (emailError) {
+      console.error("Resend error:", emailError);
+      return Response.json(
+        { error: "Nepavyko išsiųsti žinutės. Bandykite dar kartą." },
+        { status: 500 }
+      );
+    }
 
     return Response.json({ success: true });
   } catch (error) {
