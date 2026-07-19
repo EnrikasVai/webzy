@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import blogPosts from "@/data/blog-posts";
+import { getBlogPostMeta } from "@/data/seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -14,33 +15,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }) {
   const post = blogPosts.find((p) => p.enSlug === params.slug && p.published);
   if (!post) return {};
-
-  return {
-    title: post.en.title,
-    description: post.en.description,
-    alternates: {
-      canonical: `/en/${post.enSlug}`,
-      languages: { lt: `/${post.slug}`, en: `/en/${post.enSlug}` },
-    },
-    openGraph: {
-      title: `${post.en.title} | WEBZY`,
-      description: post.en.description,
-      type: "article",
-      publishedTime: post.date,
-      url: `https://webzy.lt/en/${post.enSlug}`,
-      siteName: "WEBZY",
-      locale: "en_US",
-      images: post.en.image
-        ? [{ url: post.en.image, width: 1200, height: 630, alt: post.en.title }]
-        : [{ url: "/og-image.webp", width: 1200, height: 630, alt: post.en.title }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${post.en.title} | WEBZY`,
-      description: post.en.description,
-      images: post.en.image ? [post.en.image] : ["/og-image.webp"],
-    },
-  };
+  return getBlogPostMeta(post, "en");
 }
 
 export default function EnBlogPostPage({ params }) {

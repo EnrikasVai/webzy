@@ -3,32 +3,9 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import blogPosts from "@/data/blog-posts";
+import { getPageMeta } from "@/data/seo";
 
-export const metadata = {
-  title: "Blog",
-  description:
-    "WEBZY blog about website development, e-commerce, SEO, web design and digital marketing. Tips and insights for your business.",
-  alternates: {
-    canonical: "/en/blog",
-    languages: { lt: "/blogas", en: "/en/blog" },
-  },
-  openGraph: {
-    title: "Blog | WEBZY",
-    description:
-      "WEBZY blog about website development, e-commerce, SEO and web design.",
-    url: "https://webzy.lt/en/blog",
-    siteName: "WEBZY",
-    locale: "en_US",
-    type: "website",
-    images: [{ url: "/og-image.webp", width: 1200, height: 630, alt: "WEBZY - Blog" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Blog | WEBZY",
-    description: "WEBZY blog about website development, e-commerce, SEO and web design.",
-    images: ["/og-image.webp"],
-  },
-};
+export const metadata = getPageMeta("blog", "en");
 
 export default function EnBlogPage() {
   const posts = blogPosts.filter((p) => p.published);

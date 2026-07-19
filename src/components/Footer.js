@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { HiMail } from "react-icons/hi";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { useT } from "./LocaleProvider";
@@ -25,7 +27,10 @@ const socialLinks = [
 
 export default function Footer({ locale = "lt" }) {
   const t = useT();
+  const pathname = usePathname();
   const prefix = locale === "lt" ? "" : `/${locale}`;
+  const homePath = prefix || "/";
+  const isHome = pathname === homePath;
 
   const slug = {
     apieMus: locale === "en" ? "about-us" : "apie-mus",
@@ -35,12 +40,12 @@ export default function Footer({ locale = "lt" }) {
   };
 
   const footerLinks = [
-    { name: t("nav.paslaugos"), href: `${prefix}/#paslaugos` },
-    { name: t("nav.musuDarbai"), href: `${prefix}/#darbai` },
+    { name: t("nav.paslaugos"), href: isHome ? "#paslaugos" : `${prefix}/#paslaugos` },
+    { name: t("nav.musuDarbai"), href: isHome ? "#darbai" : `${prefix}/#darbai` },
     { name: t("nav.apieMus"), href: `${prefix}/${slug.apieMus}` },
-    { name: t("nav.kainos"), href: `${prefix}/#kainos` },
+    { name: t("nav.kainos"), href: isHome ? "#kainos" : `${prefix}/#kainos` },
     { name: t("nav.blog"), href: `${prefix}/${slug.blog}` },
-    { name: t("nav.duk"), href: `${prefix}/#duk` },
+    { name: t("nav.duk"), href: isHome ? "#duk" : `${prefix}/#duk` },
     { name: t("nav.kontaktai"), href: `${prefix}/${slug.kontaktai}` },
     { name: t("footer.privatumoPolitika"), href: `${prefix}/${slug.privatumoPolitika}` },
   ];
@@ -51,7 +56,7 @@ export default function Footer({ locale = "lt" }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
           {/* Logo & description */}
           <div>
-            <a href="#" className="inline-block">
+            <Link href={homePath} className="inline-block">
               <Image
                 src="/icon.webp"
                 alt="WEBZY"
@@ -59,7 +64,7 @@ export default function Footer({ locale = "lt" }) {
                 height={90}
                 className="h-16 md:h-20 w-auto"
               />
-            </a>
+            </Link>
             <p className="mt-3 text-sm text-gray-400 max-w-xs">
               {t("footer.aprasymas")}
             </p>
@@ -71,12 +76,12 @@ export default function Footer({ locale = "lt" }) {
             <ul className="space-y-2">
               {footerLinks.map((link) => (
                 <li key={link.name}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-gray-400 hover:text-primary-400 transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

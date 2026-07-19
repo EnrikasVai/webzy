@@ -1,19 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { getPageMeta } from "@/data/seo";
 
-export const metadata = {
-  title: "Privacy Policy",
-  description:
-    "WEBZY privacy policy. Learn how we collect, use and protect your personal data.",
-  alternates: {
-    canonical: "/en/privacy-policy",
-    languages: { lt: "/privatumo-politika", en: "/en/privacy-policy" },
-  },
-  robots: {
-    index: false,
-    follow: true,
-  },
-};
+export const metadata = getPageMeta("privacy", "en");
 
 export default function EnPrivatumoPolitika() {
   return (

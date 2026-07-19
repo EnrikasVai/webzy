@@ -4,33 +4,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
 import blogPosts from "@/data/blog-posts";
+import { getPageMeta } from "@/data/seo";
 
-export const metadata = {
-  title: "Blogas",
-  description:
-    "WEBZY tinklaraštis apie interneto svetainių kūrimą, e-komerciją, SEO, web dizainą ir skaitmeninę rinkodarą. Patarimai ir įžvalgos verslui.",
-  alternates: {
-    canonical: "/blogas",
-    languages: { lt: "/blogas", en: "/en/blog" },
-  },
-  openGraph: {
-    title: "Blogas | WEBZY",
-    description:
-      "WEBZY tinklaraštis apie interneto svetainių kūrimą, e-komerciją, SEO ir web dizainą.",
-    url: "https://webzy.lt/blogas",
-    siteName: "WEBZY",
-    locale: "lt_LT",
-    type: "website",
-    images: [{ url: "/og-image.webp", width: 1200, height: 630, alt: "WEBZY - Blogas" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Blogas | WEBZY",
-    description:
-      "WEBZY tinklaraštis apie interneto svetainių kūrimą, e-komerciją, SEO ir web dizainą.",
-    images: ["/og-image.webp"],
-  },
-};
+export const metadata = getPageMeta("blog", "lt");
 
 export default function BlogPage() {
   const posts = blogPosts.filter((p) => p.published);

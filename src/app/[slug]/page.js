@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import blogPosts from "@/data/blog-posts";
+import { getBlogPostMeta } from "@/data/seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
@@ -15,33 +16,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }) {
   const post = blogPosts.find((p) => p.slug === params.slug && p.published);
   if (!post) return {};
-
-  return {
-    title: post.lt.title,
-    description: post.lt.description,
-    alternates: {
-      canonical: `/${post.slug}`,
-      languages: { lt: `/${post.slug}`, en: `/en/${post.enSlug}` },
-    },
-    openGraph: {
-      title: `${post.lt.title} | WEBZY`,
-      description: post.lt.description,
-      type: "article",
-      publishedTime: post.date,
-      url: `https://webzy.lt/${post.slug}`,
-      siteName: "WEBZY",
-      locale: "lt_LT",
-      images: post.lt.image
-        ? [{ url: post.lt.image, width: 1200, height: 630, alt: post.lt.title }]
-        : [{ url: "/og-image.webp", width: 1200, height: 630, alt: post.lt.title }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${post.lt.title} | WEBZY`,
-      description: post.lt.description,
-      images: post.lt.image ? [post.lt.image] : ["/og-image.webp"],
-    },
-  };
+  return getBlogPostMeta(post, "lt");
 }
 
 export default function BlogPostPage({ params }) {

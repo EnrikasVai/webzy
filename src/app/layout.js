@@ -4,6 +4,7 @@ import ThemeProvider from "@/components/ThemeProvider";
 import LocaleProvider from "@/components/LocaleProvider";
 import GoogleTagManager from "@/components/GoogleTagManager";
 import ltMessages from "../../messages/lt.json";
+import { getLayoutMeta } from "@/data/seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -11,60 +12,7 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata = {
-  title: {
-    default: "WEBZY - Profesionalios interneto svetainės ir web sprendimai",
-    template: "%s | WEBZY",
-  },
-  description:
-    "Profesionalios interneto svetainių kūrimas nuo 299€. E-komercija, dizainas, SEO. Nemokama konsultacija.",
-  keywords: [
-    "interneto svetainių kūrimas",
-    "web dizainas",
-    "e-komercija",
-    "SEO paslaugos",
-    "svetainių kūrimas Lietuvoje",
-  ],
-  authors: [{ name: "WEBZY", url: "https://webzy.lt" }],
-  icons: { icon: "/favicon.ico", apple: "/icon.webp" },
-  metadataBase: new URL("https://webzy.lt"),
-  alternates: {
-    canonical: "/",
-    languages: {
-      lt: "/",
-      en: "/en",
-    },
-  },
-  openGraph: {
-    title: "WEBZY - Profesionalios interneto svetainės",
-    description:
-      "Profesionalios interneto svetainių kūrimas nuo 299€. E-komercija, dizainas, SEO. Nemokama konsultacija.",
-    type: "website",
-    locale: "lt_LT",
-    siteName: "WEBZY",
-    url: "https://webzy.lt",
-    images: [
-      {
-        url: "/og-image.webp",
-        width: 1200,
-        height: 630,
-        alt: "WEBZY - Profesionalios interneto svetainės",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "WEBZY - Profesionalios interneto svetainės",
-    description:
-      "Profesionalios interneto svetainių kūrimas nuo 299€. E-komercija, dizainas, SEO. Nemokama konsultacija.",
-    images: ["/og-image.webp"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large" },
-  },
-};
+export const metadata = getLayoutMeta("lt");
 
 export default function RootLayout({ children }) {
   return (

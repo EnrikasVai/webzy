@@ -8,33 +8,9 @@ import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
+import { getPageMeta } from "@/data/seo";
 
-export const metadata = {
-  title: "Internetinių svetainių kūrimas nuo 299€ | WEBZY",
-  description:
-    "Kuriame greitas, modernias ir SEO optimizuotas interneto svetaines nuo 299€. E-komercija, reprezentacinės svetainės, dizainas ir web sprendimai. Nemokama konsultacija!",
-  alternates: {
-    canonical: "/",
-    languages: { lt: "/", en: "/en" },
-  },
-  openGraph: {
-    title: "Internetinių svetainių kūrimas nuo 299€ | WEBZY",
-    description:
-      "Kuriame greitas, modernias ir SEO optimizuotas interneto svetaines nuo 299€. Nemokama konsultacija!",
-    url: "https://webzy.lt",
-    siteName: "WEBZY",
-    locale: "lt_LT",
-    type: "website",
-    images: [{ url: "/og-image.webp", width: 1200, height: 630, alt: "WEBZY - Internetinių svetainių kūrimas nuo 299€" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Internetinių svetainių kūrimas nuo 299€ | WEBZY",
-    description:
-      "Kuriame greitas, modernias ir SEO optimizuotas interneto svetaines nuo 299€. Nemokama konsultacija!",
-    images: ["/og-image.webp"],
-  },
-};
+export const metadata = getPageMeta("home", "lt");
 
 export default function Home() {
   const jsonLd = {

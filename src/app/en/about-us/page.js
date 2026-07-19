@@ -3,32 +3,9 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowRight, FiTarget, FiEye, FiUsers, FiAward, FiSearch, FiZap, FiSun } from "react-icons/fi";
+import { getPageMeta } from "@/data/seo";
 
-export const metadata = {
-  title: "About Us",
-  description:
-    "Meet the WEBZY team. We create professional websites, e-commerce solutions and web design from €299.",
-  alternates: {
-    canonical: "/en/about-us",
-    languages: { lt: "/apie-mus", en: "/en/about-us" },
-  },
-  openGraph: {
-    title: "About Us | WEBZY",
-    description:
-      "Meet the WEBZY team. We create professional websites, e-commerce solutions and web design from €299.",
-    url: "https://webzy.lt/en/about-us",
-    siteName: "WEBZY",
-    locale: "en_US",
-    type: "website",
-    images: [{ url: "/og-image.webp", width: 1200, height: 630, alt: "WEBZY - About Us" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "About Us | WEBZY",
-    description: "Meet the WEBZY team. Professional websites from €299.",
-    images: ["/og-image.webp"],
-  },
-};
+export const metadata = getPageMeta("about", "en");
 
 const teamMembers = [
   {

@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { HiMenu, HiX, HiSun, HiMoon } from "react-icons/hi";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useTheme } from "./ThemeProvider";
 import { useT } from "./LocaleProvider";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -12,8 +14,11 @@ export default function Navbar({ locale = "lt" }) {
   const [scrolled, setScrolled] = useState(false);
   const { isDark, toggleTheme } = useTheme();
   const t = useT();
+  const pathname = usePathname();
 
   const prefix = locale === "lt" ? "" : `/${locale}`;
+  const homePath = prefix || "/";
+  const isHome = pathname === homePath;
 
   const slug = {
     apieMus: locale === "en" ? "about-us" : "apie-mus",
@@ -21,10 +26,10 @@ export default function Navbar({ locale = "lt" }) {
   };
 
   const navLinks = [
-    { name: t("nav.paslaugos"), href: `${prefix}/#paslaugos` },
-    { name: t("nav.musuDarbai"), href: `${prefix}/#darbai` },
+    { name: t("nav.paslaugos"), href: isHome ? "#paslaugos" : `${prefix}/#paslaugos` },
+    { name: t("nav.musuDarbai"), href: isHome ? "#darbai" : `${prefix}/#darbai` },
     { name: t("nav.apieMus"), href: `${prefix}/${slug.apieMus}` },
-    { name: t("nav.kainos"), href: `${prefix}/#kainos` },
+    { name: t("nav.kainos"), href: isHome ? "#kainos" : `${prefix}/#kainos` },
     { name: t("nav.blog"), href: `${prefix}/${slug.blog}` },
   ];
 
@@ -47,7 +52,7 @@ export default function Navbar({ locale = "lt" }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href={prefix || "/"} className="flex items-center">
+          <Link href={prefix || "/"} className="flex items-center">
             <Image
               src="/icon.webp"
               alt="WEBZY"
@@ -56,18 +61,18 @@ export default function Navbar({ locale = "lt" }) {
               className="h-16 md:h-20 w-auto transition-all duration-300 brightness-0 dark:brightness-100"
               priority
             />
-          </a>
+          </Link>
 
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-200"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
 
             {/* Language switcher */}
@@ -86,12 +91,12 @@ export default function Navbar({ locale = "lt" }) {
               )}
             </button>
 
-            <a
-              href={`${prefix}/#kontaktai`}
+            <Link
+              href={isHome ? "#kontaktai" : `${prefix}/#kontaktai`}
               className="btn-primary text-sm !py-2 !px-5"
             >
               {t("nav.nemokamaKonsultacija")}
-            </a>
+            </Link>
           </div>
 
           {/* Mobile: theme toggle + hamburger */}
@@ -127,22 +132,22 @@ export default function Navbar({ locale = "lt" }) {
       >
         <div className="px-4 pb-4 space-y-2 bg-white dark:bg-gray-900 border-t dark:border-gray-800">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
               className="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
-          <a
-            href={`${prefix}/#kontaktai`}
+          <Link
+            href={isHome ? "#kontaktai" : `${prefix}/#kontaktai`}
             onClick={() => setIsOpen(false)}
             className="block text-center btn-primary text-sm !py-2 !px-5 mt-3"
           >
             {t("nav.nemokamaKonsultacija")}
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
