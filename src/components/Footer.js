@@ -29,6 +29,7 @@ export default function Footer({ locale = "lt" }) {
 
   const slug = {
     apieMus: locale === "en" ? "about-us" : "apie-mus",
+    kontaktai: locale === "en" ? "contact" : "kontaktai",
     privatumoPolitika: locale === "en" ? "privacy-policy" : "privatumo-politika",
     blog: locale === "en" ? "blog" : "blogas",
   };
@@ -40,7 +41,7 @@ export default function Footer({ locale = "lt" }) {
     { name: t("nav.kainos"), href: `${prefix}/#kainos` },
     { name: t("nav.blog"), href: `${prefix}/${slug.blog}` },
     { name: t("nav.duk"), href: `${prefix}/#duk` },
-    { name: t("nav.kontaktai"), href: `${prefix}/#kontaktai` },
+    { name: t("nav.kontaktai"), href: `${prefix}/${slug.kontaktai}` },
     { name: t("footer.privatumoPolitika"), href: `${prefix}/${slug.privatumoPolitika}` },
   ];
 
