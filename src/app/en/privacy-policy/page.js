@@ -133,7 +133,7 @@ export default function EnPrivatumoPolitika() {
 
             <p>
               You can change your cookie settings at any time in your browser or withdraw your cookie consent by
-              clicking the "Cookie Settings" link in the Website footer.
+              clicking the &ldquo;Cookie Settings&rdquo; link in the Website footer.
             </p>
 
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
@@ -147,10 +147,10 @@ export default function EnPrivatumoPolitika() {
             </p>
             <p>
               Google uses this information to compile reports on Website traffic. Google may transfer this information
-              to third parties where required by law or where third parties process data on Google's behalf.
+              to third parties where required by law or where third parties process data on Google&rsquo;s behalf.
             </p>
             <p>
-              More information on Google's data processing:
+              More information on Google&rsquo;s data processing:
               <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary-600 dark:text-primary-400 hover:underline"> Google Privacy Policy</a>.
             </p>
 
@@ -213,7 +213,7 @@ export default function EnPrivatumoPolitika() {
               <li><strong>Right to be informed</strong> – receive information about what data we process about you.</li>
               <li><strong>Right of access</strong> – obtain a copy of your processed data.</li>
               <li><strong>Right to rectification</strong> – request correction of inaccurate data.</li>
-              <li><strong>Right to erasure</strong> ("right to be forgotten") – request deletion of your data.</li>
+              <li><strong>Right to erasure</strong> (&ldquo;right to be forgotten&rdquo;) – request deletion of your data.</li>
               <li><strong>Right to restrict processing</strong> – limit data processing in certain cases.</li>
               <li><strong>Right to data portability</strong> – receive your data in a structured format.</li>
               <li><strong>Right to object</strong> – object to processing for direct marketing or where processing is based on legitimate interest.</li>

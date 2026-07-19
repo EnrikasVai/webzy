@@ -136,23 +136,23 @@ export default function PrivatumoPolitikaPage() {
 
             <p>
               Jūs galite bet kada pakeisti slapukų nustatymus savo naršyklėje arba ištrinti slapukų sutikimą
-              paspaudę „Slapukų nustatymai" nuorodą Svetainės apačioje.
+              paspaudę „Slapukų nustatymai&rdquo; nuorodą Svetainės apačioje.
             </p>
 
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
               5. Google Analytics
             </h2>
             <p>
-              Svetainė naudoja <strong>Google Analytics 4 (GA4)</strong> – žiniatinklio analizės paslaugą, teikiamą „Google Ireland Limited"
+              Svetainė naudoja <strong>Google Analytics 4 (GA4)</strong> – žiniatinklio analizės paslaugą, teikiamą „Google Ireland Limited&rdquo;
               (Gordon House, Barrow Street, Dublin 4, Airija). Google Analytics naudoja slapukus, kad analizuotų jūsų naudojimąsi Svetaine.
-              Surinkta informacija (įskaitant anonimizuotą IP adresą) perduodama ir saugoma „Google" serveriuose Jungtinėse Valstijose.
+              Surinkta informacija (įskaitant anonimizuotą IP adresą) perduodama ir saugoma „Google&rdquo; serveriuose Jungtinėse Valstijose.
             </p>
             <p>
-              „Google" naudoja šią informaciją Svetainės lankomumo ataskaitoms rengti. „Google" gali perduoti šią informaciją
-              trečiosioms šalims, jei to reikalauja įstatymai arba jei trečiosios šalys apdoroja duomenis „Google" vardu.
+              „Google&rdquo; naudoja šią informaciją Svetainės lankomumo ataskaitoms rengti. „Google&rdquo; gali perduoti šią informaciją
+              trečiosioms šalims, jei to reikalauja įstatymai arba jei trečiosios šalys apdoroja duomenis „Google&rdquo; vardu.
             </p>
             <p>
-              Daugiau informacijos apie „Google" duomenų tvarkymą rasite:
+              Daugiau informacijos apie „Google&rdquo; duomenų tvarkymą rasite:
               <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary-600 dark:text-primary-400 hover:underline"> Google privatumo politikoje</a>.
             </p>
 
@@ -215,7 +215,7 @@ export default function PrivatumoPolitikaPage() {
               <li><strong>Teisė žinoti</strong> – gauti informaciją apie tai, kokius jūsų duomenis tvarkome.</li>
               <li><strong>Teisė susipažinti</strong> – gauti savo tvarkomų duomenų kopiją.</li>
               <li><strong>Teisė ištaisyti</strong> – reikalauti ištaisyti netikslius duomenis.</li>
-              <li><strong>Teisė ištrinti</strong> („teisė būti pamirštam") – reikalauti ištrinti jūsų duomenis.</li>
+              <li><strong>Teisė ištrinti</strong> („teisė būti pamirštam&rdquo;) – reikalauti ištrinti jūsų duomenis.</li>
               <li><strong>Teisė apriboti tvarkymą</strong> – apriboti duomenų tvarkymą tam tikrais atvejais.</li>
               <li><strong>Teisė į duomenų perkeliamumą</strong> – gauti duomenis struktūrizuotu formatu.</li>
               <li><strong>Teisė nesutikti</strong> – nesutikti su duomenų tvarkymu tiesioginės rinkodaros tikslais arba kai tvarkymas grindžiamas teisėtu interesu.</li>
