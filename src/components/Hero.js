@@ -2,7 +2,35 @@
 
 import Image from "next/image";
 import { HiStar } from "react-icons/hi";
+import { motion } from "framer-motion";
 import { useT } from "./LocaleProvider";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 50 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
+
+const fadeDown = {
+  hidden: { opacity: 0, y: -30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.85 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] },
+  },
+};
 
 export default function Hero() {
   const t = useT();
@@ -37,37 +65,61 @@ export default function Hero() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
         {/* Rating badge */}
-        <div className="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-full px-4 py-2 mb-8 shadow-sm animate-fade-in-down">
+        <motion.div
+          className="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-full px-4 py-2 mb-8 shadow-sm"
+          variants={fadeDown}
+          initial="hidden"
+          animate="visible"
+        >
           <HiStar className="w-5 h-5 text-yellow-400 animate-pulse-soft" />
           <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
             {t("hero.reitingas")}
           </span>
-        </div>
+        </motion.div>
 
         {/* Main heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white leading-tight mb-6 animate-fade-in-up">
+        <motion.h1
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white leading-tight mb-6"
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+        >
           {t("hero.pavadinimas1")}
           <br />
           <span className="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent bg-[length:200%_100%] animate-shimmer relative overflow-hidden inline-block pb-1">
             {t("hero.pavadinimas2")}
           </span>
-        </h1>
+        </motion.h1>
 
-        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+        <motion.p
+          className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10"
+          variants={fadeUp}
+          custom={0.15}
+          initial="hidden"
+          animate="visible"
+        >
           {t("hero.aprasymas")}
-        </p>
+        </motion.p>
 
         {/* CTA button */}
-        <a
+        <motion.a
           href="#kontaktai"
-          className="btn-primary text-lg inline-block animate-scale-in hover:scale-105 transition-transform duration-300"
-          style={{ animationDelay: "0.3s" }}
+          className="btn-primary text-lg inline-block hover:scale-105 transition-transform duration-300"
+          variants={scaleIn}
+          initial="hidden"
+          animate="visible"
         >
           {t("hero.nemokamaKonsultacija")}
-        </a>
+        </motion.a>
 
         {/* Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-8 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+        <motion.div
+          className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-8 max-w-3xl mx-auto"
+          variants={fadeUp}
+          custom={0.45}
+          initial="hidden"
+          animate="visible"
+        >
           <div className="text-center group">
             <div className="text-3xl md:text-4xl font-bold text-primary-600 group-hover:scale-110 transition-transform duration-300">
               30+
@@ -86,10 +138,16 @@ export default function Hero() {
             </div>
             <div className="text-sm text-gray-500 mt-1">{t("hero.ivertinimas")}</div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Technology logos */}
-        <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
+        <motion.div
+          className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800"
+          variants={fadeUp}
+          custom={0.6}
+          initial="hidden"
+          animate="visible"
+        >
           <p className="text-sm text-gray-400 dark:text-gray-500 mb-6">
             {t("hero.dirbameSu")}
           </p>
@@ -111,7 +169,7 @@ export default function Hero() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

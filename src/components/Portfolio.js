@@ -40,7 +40,7 @@ export default function Portfolio() {
             <span className="text-primary-600">{t("portfolio.pavadinimas2")}</span>
           </h2>
         </AnimatedOnScroll>
-        <AnimatedOnScroll animation="fade-in-up" delay={0.1}>
+        <AnimatedOnScroll animation="fade-in-up" delay={0.15}>
           <p className="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 -mt-8">
             {t("portfolio.aprasymas")}
           </p>
@@ -48,7 +48,7 @@ export default function Portfolio() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <AnimatedOnScroll key={index} animation={index % 2 === 0 ? "fade-in-left" : "fade-in-right"} delay={index * 0.12}>
+            <AnimatedOnScroll key={index} animation={index % 2 === 0 ? "fade-in-left" : "fade-in-right"} delay={index * 0.18}>
               <div className="group card !p-0 overflow-hidden hover:-translate-y-2 transition-all duration-300 hover:shadow-xl"
             >
               {/* Project image */}

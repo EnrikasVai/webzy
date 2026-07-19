@@ -36,22 +36,16 @@ module.exports = {
         },
       },
       animation: {
-        "fade-in": "fadeIn 0.6s ease-out forwards",
-        "fade-in-up": "fadeInUp 0.6s ease-out forwards",
-        "fade-in-down": "fadeInDown 0.6s ease-out forwards",
-        "fade-in-left": "fadeInLeft 0.7s ease-out forwards",
-        "fade-in-right": "fadeInRight 0.7s ease-out forwards",
-        "slide-up": "slideUp 0.6s ease-out forwards",
-        "slide-down": "slideDown 0.3s ease-out forwards",
-        "scale-in": "scaleIn 0.5s ease-out forwards",
+        "fade-in": "fadeIn 0.5s ease-out forwards",
+        "fade-in-up": "fadeInUp 0.7s ease-out forwards",
+        "fade-in-down": "fadeInDown 0.7s ease-out forwards",
+        "slide-up": "slideUp 0.5s ease-out forwards",
+        "scale-in": "scaleIn 0.6s ease-out forwards",
         "float": "float 6s ease-in-out infinite",
         "float-slow": "float 8s ease-in-out infinite",
         "float-slower": "float 10s ease-in-out infinite",
         "pulse-soft": "pulseSoft 3s ease-in-out infinite",
         "shimmer": "shimmer 9s linear infinite",
-        "count-up": "countUp 2s ease-out forwards",
-        "spin-slow": "spin 8s linear infinite",
-        "wiggle": "wiggle 1s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -59,28 +53,16 @@ module.exports = {
           "100%": { opacity: "1" },
         },
         fadeInUp: {
-          "0%": { opacity: "0", transform: "translateY(40px)" },
+          "0%": { opacity: "0", transform: "translateY(30px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         fadeInDown: {
-          "0%": { opacity: "0", transform: "translateY(-20px)" },
+          "0%": { opacity: "0", transform: "translateY(-30px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         slideUp: {
           "0%": { opacity: "0", transform: "translateY(30px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        slideDown: {
-          "0%": { opacity: "0", transform: "translateY(-10px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        fadeInLeft: {
-          "0%": { opacity: "0", transform: "translateX(-40px)" },
-          "100%": { opacity: "1", transform: "translateX(0)" },
-        },
-        fadeInRight: {
-          "0%": { opacity: "0", transform: "translateX(40px)" },
-          "100%": { opacity: "1", transform: "translateX(0)" },
         },
         scaleIn: {
           "0%": { opacity: "0", transform: "scale(0.9)" },
@@ -97,15 +79,6 @@ module.exports = {
         shimmer: {
           "0%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(100%)" },
-        },
-        countUp: {
-          "0%": { opacity: "0", transform: "translateY(10px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        wiggle: {
-          "0%, 100%": { transform: "rotate(0deg)" },
-          "25%": { transform: "rotate(-3deg)" },
-          "75%": { transform: "rotate(3deg)" },
         },
       },
     },

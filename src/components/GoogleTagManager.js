@@ -10,7 +10,7 @@ const GTM_ID = "GTM-M2BSVPNP";
  */
 export default function GoogleTagManager() {
   useEffect(() => {
-    // Check if already consented
+    // Check initial consent state
     const consent = localStorage.getItem("cookie-consent");
     if (consent === "accepted") {
       injectGTM();
@@ -21,6 +21,8 @@ export default function GoogleTagManager() {
       const current = localStorage.getItem("cookie-consent");
       if (current === "accepted") {
         injectGTM();
+      } else {
+        removeGTM();
       }
     };
 
@@ -46,11 +48,13 @@ function injectGTM() {
   // Inject <script> in <head>
   const script = document.createElement("script");
   script.async = true;
+  script.id = "gtm-script";
   script.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`;
   document.head.appendChild(script);
 
   // Inject <noscript> iframe fallback right after <body> opens
   const noscript = document.createElement("noscript");
+  noscript.id = "gtm-noscript";
   const iframe = document.createElement("iframe");
   iframe.src = `https://www.googletagmanager.com/ns.html?id=${GTM_ID}`;
   iframe.height = "0";
@@ -61,4 +65,20 @@ function injectGTM() {
 
   // Insert noscript as first child of body
   document.body.insertBefore(noscript, document.body.firstChild);
+}
+
+function removeGTM() {
+  if (!gtmInjected) return;
+  gtmInjected = false;
+
+  // Remove injected script
+  const script = document.getElementById("gtm-script");
+  if (script) script.remove();
+
+  // Remove noscript iframe
+  const noscript = document.getElementById("gtm-noscript");
+  if (noscript) noscript.remove();
+
+  // Clear all GTM-related dataLayer entries and reset
+  window.dataLayer = [];
 }

@@ -33,7 +33,7 @@ export default function Pricing() {
             <span className="text-primary-600">{t("pricing.pavadinimas2")}</span>
           </h2>
         </AnimatedOnScroll>
-        <AnimatedOnScroll animation="fade-in-up" delay={0.1}>
+        <AnimatedOnScroll animation="fade-in-up" delay={0.15}>
           <p className="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 -mt-8">
             {t("pricing.aprasymas")}
           </p>
@@ -41,7 +41,7 @@ export default function Pricing() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
-            <AnimatedOnScroll key={index} animation={index === 1 ? "fade-in-up" : index === 0 ? "fade-in-left" : "fade-in-right"} delay={index * 0.15}>
+            <AnimatedOnScroll key={index} animation={index === 1 ? "fade-in-up" : index === 0 ? "fade-in-left" : "fade-in-right"} delay={index * 0.2}>
               <div
                 className={`relative card flex flex-col transition-all duration-300 hover:-translate-y-2 ${
                   plan.popular

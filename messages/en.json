@@ -144,7 +144,12 @@
     "tekstas": "This website uses essential cookies for functionality and security, and Google Analytics cookies for traffic statistics. You can accept all or reject analytics cookies.",
     "sutinku": "Accept",
     "atmesti": "Reject",
-    "suZinoti": "Learn More"
+    "suZinoti": "Learn More",
+    "consentStatus": "Cookie Preferences",
+    "statusAccepted": "You have accepted cookies",
+    "statusRejected": "You have rejected analytics cookies",
+    "statusNone": "You have not set cookie preferences",
+    "close": "Close"
   },
   "apie": {
     "heroLabel": "Our Story",

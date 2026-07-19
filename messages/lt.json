@@ -144,7 +144,12 @@
     "tekstas": "Šioje svetainėje naudojame būtinuosius slapukus svetainės veikimui bei saugumui užtikrinti, ir Google Analytics slapukus lankomumo statistikai rinkti. Galite sutikti su visais arba atmesti analitinius.",
     "sutinku": "Sutinku",
     "atmesti": "Atmesti",
-    "suZinoti": "Sužinoti daugiau"
+    "suZinoti": "Sužinoti daugiau",
+    "consentStatus": "Slapukų nuostatos",
+    "statusAccepted": "Jūs sutikote su slapukais",
+    "statusRejected": "Jūs atmetėte analitinius slapukus",
+    "statusNone": "Nenustatėte slapukų nuostatų",
+    "close": "Uždaryti"
   },
   "apie": {
     "heroLabel": "Mūsų istorija",
