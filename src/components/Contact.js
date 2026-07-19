@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
   HiPhone,
   HiMail,
@@ -8,6 +8,7 @@ import {
   HiPaperAirplane,
   HiExclamationCircle,
 } from "react-icons/hi";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 import { useT } from "./LocaleProvider";
 
@@ -21,6 +22,8 @@ export default function Contact() {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState(null);
+  const turnstileRef = useRef(null);
 
   const validate = () => {
     const newErrors = {};
@@ -43,6 +46,10 @@ export default function Contact() {
       newErrors.message = "Žinutė per trumpa (min. 10 simbolių)";
     }
 
+    if (!turnstileToken) {
+      newErrors.turnstile = "Prašome patvirtinti, kad nesate robotas";
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -56,17 +63,39 @@ export default function Contact() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
     setLoading(true);
-    // TODO: send email via Resend / API route
-    setTimeout(() => {
-      setLoading(false);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          message: formData.message.trim(),
+          turnstileToken,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Klaida siunčiant žinutę");
+      }
+
       setSubmitted(true);
       setFormData({ name: "", email: "", message: "" });
       setErrors({});
-    }, 1500);
+      setTurnstileToken(null);
+      turnstileRef.current?.reset();
+    } catch (err) {
+      setErrors({ form: err.message });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputClass = (field) =>
@@ -166,6 +195,31 @@ export default function Contact() {
                     </p>
                   )}
                 </div>
+                {/* Form error */}
+                {errors.form && (
+                  <div className="p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-sm text-red-600 dark:text-red-400 flex items-center gap-2">
+                    <HiExclamationCircle className="w-5 h-5 flex-shrink-0" />
+                    {errors.form}
+                  </div>
+                )}
+
+                {/* Turnstile */}
+                <div>
+                  <Turnstile
+                    ref={turnstileRef}
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                    onSuccess={(token) => setTurnstileToken(token)}
+                    onExpire={() => setTurnstileToken(null)}
+                    onError={() => setTurnstileToken(null)}
+                  />
+                  {errors.turnstile && (
+                    <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
+                      <HiExclamationCircle className="w-4 h-4" />
+                      {errors.turnstile}
+                    </p>
+                  )}
+                </div>
+
                 <button
                   type="submit"
                   disabled={loading}
