@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@marsidev/react-turnstile": "^1.5.3",
+    "@opennextjs/cloudflare": "^1.20.1",
     "@tailwindcss/typography": "^0.5.20",
     "next": "^15.5.18",
     "react": "^19.2.7",
