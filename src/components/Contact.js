@@ -123,10 +123,10 @@ export default function Contact() {
                 <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <HiPaperAirplane className="w-8 h-8 text-primary-600 rotate-45" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                   {t("contact.aciu")}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-300">
                   {t("contact.susisieksime")}
                 </p>
                 <button
