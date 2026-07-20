@@ -94,6 +94,20 @@ const PAGES = {
       noIndex: true,
     },
   },
+  wordpress: {
+    lt: {
+      title: "WordPress svetainių kūrimas nuo 299€ | WEBZY",
+      description:
+        "Profesionalus WordPress svetainių kūrimas, WooCommerce el. parduotuvės, SEO optimizacija ir techninė priežiūra. Individualūs sprendimai verslui. Nemokama konsultacija!",
+      canonical: "/wordpress-svetainiu-kurimas",
+    },
+    en: {
+      title: "WordPress Website Development from €299 | WEBZY",
+      description:
+        "Professional WordPress website development, WooCommerce online stores, SEO optimization and maintenance. Custom solutions for businesses. Free consultation!",
+      canonical: "/en/wordpress-website-development",
+    },
+  },
 };
 
 // Alternatyvūs kalbų URL (hreflang)
@@ -103,6 +117,7 @@ const ALT_SLUGS = {
   blog: { lt: "/blogas", en: "/en/blog" },
   contact: { lt: "/kontaktai", en: "/en/contact" },
   privacy: { lt: "/privatumo-politika", en: "/en/privacy-policy" },
+  wordpress: { lt: "/wordpress-svetainiu-kurimas", en: "/en/wordpress-website-development" },
 };
 
 const LOCALES = { lt: "lt_LT", en: "en_US" };
