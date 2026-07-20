@@ -38,6 +38,7 @@ export default function Footer({ locale = "lt" }) {
     privatumoPolitika: locale === "en" ? "privacy-policy" : "privatumo-politika",
     blog: locale === "en" ? "blog" : "blogas",
     wordpress: locale === "en" ? "wordpress-website-development" : "wordpress-svetainiu-kurimas",
+    prieziura: locale === "en" ? "website-maintenance" : "svetainiu-prieziura",
   };
 
   const footerLinks = [
@@ -46,6 +47,7 @@ export default function Footer({ locale = "lt" }) {
     { name: t("nav.apieMus"), href: `${prefix}/${slug.apieMus}` },
     { name: t("nav.kainos"), href: isHome ? "#kainos" : `${prefix}/#kainos` },
     { name: t("footer.wordpress"), href: `${prefix}/${slug.wordpress}` },
+    { name: t("footer.prieziura"), href: `${prefix}/${slug.prieziura}` },
     { name: t("nav.blog"), href: `${prefix}/${slug.blog}` },
     { name: t("nav.duk"), href: isHome ? "#duk" : `${prefix}/#duk` },
     { name: t("nav.kontaktai"), href: `${prefix}/${slug.kontaktai}` },

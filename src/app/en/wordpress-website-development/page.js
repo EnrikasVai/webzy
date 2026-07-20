@@ -7,6 +7,7 @@ import CookieBanner from "@/components/CookieBanner";
 import Link from "next/link";
 import { FiCheckCircle, FiZap, FiShield, FiSearch, FiSmartphone, FiSettings, FiShoppingCart, FiTrendingUp, FiArrowRight } from "react-icons/fi";
 import { getPageMeta } from "@/data/seo";
+import FaqAccordion from "@/components/FaqAccordion";
 
 export const metadata = getPageMeta("wordpress", "en");
 
@@ -85,7 +86,7 @@ const faq = [
   },
   {
     q: "How much does a WordPress website cost?",
-    a: "The cost of a WordPress website depends on your needs. A simple 5-6 page WordPress website starts from €299. An e-commerce store with WooCommerce starts from €899. We provide a customized quote for each project.",
+    a: "The cost of a WordPress website depends on your needs. A simple 1-2 page WordPress website starts from €299. An e-commerce store with WooCommerce starts from €549. We provide a customized quote for each project.",
   },
   {
     q: "Can I manage the website myself?",
@@ -223,9 +224,9 @@ export default function WordPressDevelopmentPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((b, i) => (
               <AnimatedOnScroll key={i} animation={i % 2 === 0 ? "fade-in-left" : "fade-in-right"} delay={i * 0.1}>
-              <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/50 rounded-xl flex items-center justify-center mb-5">
-                  <b.icon className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+              <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+                <div className="w-14 h-14 bg-primary-100 dark:bg-primary-900/50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-primary-600 dark:group-hover:bg-primary-600 transition-colors duration-300">
+                  <b.icon className="w-7 h-7 text-primary-600 dark:text-primary-400 group-hover:text-white transition-colors duration-300" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">{b.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">{b.desc}</p>
@@ -348,17 +349,7 @@ export default function WordPressDevelopmentPage() {
             </h2>
           </div>
           <div className="space-y-4">
-            {faq.map((item, i) => (
-              <details key={i} className="group bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden">
-                <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white pr-8">{item.q}</h3>
-                  <span className="text-primary-600 dark:text-primary-400 text-xl group-open:rotate-45 transition-transform">+</span>
-                </summary>
-                <div className="px-6 pb-6">
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{item.a}</p>
-                </div>
-              </details>
-            ))}
+            <FaqAccordion items={faq} />
           </div>
         </div>
       </section>

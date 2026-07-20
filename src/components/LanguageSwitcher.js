@@ -32,8 +32,8 @@ export default function LanguageSwitcher() {
       setHrefs({ lt: "/blogas", en: "/en/blog" });
     } else {
       // Map other paths
-      const enSlugs = {"/apie-mus": "/about-us", "/kontaktai": "/contact", "/privatumo-politika": "/privacy-policy", "/blogas": "/blog", "/wordpress-svetainiu-kurimas": "/wordpress-website-development"};
-      const ltSlugs = {"/about-us": "/apie-mus", "/contact": "/kontaktai", "/privacy-policy": "/privatumo-politika", "/blog": "/blogas", "/wordpress-website-development": "/wordpress-svetainiu-kurimas"};
+      const enSlugs = {"/apie-mus": "/about-us", "/kontaktai": "/contact", "/privatumo-politika": "/privacy-policy", "/blogas": "/blog", "/wordpress-svetainiu-kurimas": "/wordpress-website-development", "/svetainiu-prieziura": "/website-maintenance"};
+      const ltSlugs = {"/about-us": "/apie-mus", "/contact": "/kontaktai", "/privacy-policy": "/privatumo-politika", "/blog": "/blogas", "/wordpress-website-development": "/wordpress-svetainiu-kurimas", "/website-maintenance": "/svetainiu-prieziura"};
       const pathWithoutEn = path.replace(/^\/en/, "") || "/";
       const isEn = path.startsWith("/en");
 

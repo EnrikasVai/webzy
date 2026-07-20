@@ -108,6 +108,20 @@ const PAGES = {
       canonical: "/en/wordpress-website-development",
     },
   },
+  maintenance: {
+    lt: {
+      title: "Svetainių priežiūra ir palaikymas nuo 29€/mėn | WEBZY",
+      description:
+        "Profesionali interneto svetainių priežiūra: WordPress atnaujinimai, atsarginės kopijos, saugumo užtikrinimas, greičio optimizavimas ir techninis palaikymas. Planai nuo 29€/mėn.",
+      canonical: "/svetainiu-prieziura",
+    },
+    en: {
+      title: "Website Maintenance & Support from €29/mo | WEBZY",
+      description:
+        "Professional website maintenance: WordPress updates, backups, security monitoring, speed optimization and technical support. Plans from €29/month.",
+      canonical: "/en/website-maintenance",
+    },
+  },
 };
 
 // Alternatyvūs kalbų URL (hreflang)
@@ -118,6 +132,7 @@ const ALT_SLUGS = {
   contact: { lt: "/kontaktai", en: "/en/contact" },
   privacy: { lt: "/privatumo-politika", en: "/en/privacy-policy" },
   wordpress: { lt: "/wordpress-svetainiu-kurimas", en: "/en/wordpress-website-development" },
+  maintenance: { lt: "/svetainiu-prieziura", en: "/en/website-maintenance" },
 };
 
 const LOCALES = { lt: "lt_LT", en: "en_US" };
