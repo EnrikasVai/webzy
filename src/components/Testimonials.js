@@ -32,11 +32,6 @@ export default function Testimonials() {
     return () => clearInterval(interval);
   }, [isPaused, next]);
 
-  const item = testimonialKeys[current];
-  const tName = t(`testimonials.${item.name}`);
-  const tRole = t(`testimonials.${item.role}`);
-  const tQuote = t(`testimonials.${item.quote}`);
-
   return (
     <section className="py-20 bg-gradient-to-br from-primary-600 to-primary-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,26 +44,36 @@ export default function Testimonials() {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 md:p-12 relative text-center transition-all duration-500">
-            <HiChatAlt2 className="absolute top-4 right-4 w-10 h-10 text-white/10" />
+          {/* Grid stacking: all testimonials rendered in the same cell, only active one visible.
+              The grid auto-sizes to the tallest testimonial, preventing layout shift. */}
+          <div className="grid [grid-template-areas:'stack']">
+            {testimonialKeys.map((item, i) => (
+              <div
+                key={item.name}
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-8 md:p-12 relative text-center transition-opacity duration-500 [grid-area:stack]"
+                style={{ opacity: i === current ? 1 : 0, pointerEvents: i === current ? "auto" : "none" }}
+              >
+                <HiChatAlt2 className="absolute top-4 right-4 w-10 h-10 text-white/10" />
 
-            {/* Stars */}
-            <div className="flex justify-center text-yellow-300 mb-6">
-              {[...Array(item.rating)].map((_, i) => (
-                <HiStar key={i} className="w-6 h-6" />
-              ))}
-            </div>
+                {/* Stars */}
+                <div className="flex justify-center text-yellow-300 mb-6">
+                  {[...Array(item.rating)].map((_, j) => (
+                    <HiStar key={j} className="w-6 h-6" />
+                  ))}
+                </div>
 
-            {/* Quote */}
-            <p className="text-white/90 text-lg md:text-xl leading-relaxed mb-8 italic">
-              &ldquo;{tQuote}&rdquo;
-            </p>
+                {/* Quote */}
+                <p className="text-white/90 text-lg md:text-xl leading-relaxed mb-8 italic">
+                  &ldquo;{t(`testimonials.${item.quote}`)}&rdquo;
+                </p>
 
-            {/* Author */}
-            <div>
-              <div className="font-bold text-white text-lg">{tName}</div>
-              <div className="text-primary-200 text-sm">{tRole}</div>
-            </div>
+                {/* Author */}
+                <div>
+                  <div className="font-bold text-white text-lg">{t(`testimonials.${item.name}`)}</div>
+                  <div className="text-primary-200 text-sm">{t(`testimonials.${item.role}`)}</div>
+                </div>
+              </div>
+            ))}
           </div>
 
           {/* Navigation */}
