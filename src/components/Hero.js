@@ -1,8 +1,9 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { HiStar } from "react-icons/hi";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useT } from "./LocaleProvider";
 
 const fadeUp = {
@@ -34,6 +35,25 @@ const scaleIn = {
 
 export default function Hero() {
   const t = useT();
+
+  const rotatingWords = [
+    t("hero.rotatingWords.0"),
+    t("hero.rotatingWords.1"),
+    t("hero.rotatingWords.2"),
+    t("hero.rotatingWords.3"),
+    t("hero.rotatingWords.4"),
+    t("hero.rotatingWords.5"),
+    t("hero.rotatingWords.6"),
+  ];
+
+  const [wordIndex, setWordIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex((prev) => (prev + 1) % rotatingWords.length);
+    }, 2800);
+    return () => clearInterval(interval);
+  }, [rotatingWords.length]);
 
   const techItems = [
     { src: "/react.svg", label: "React" },
@@ -86,8 +106,19 @@ export default function Hero() {
         >
           {t("hero.pavadinimas1")}
           <br />
-          <span className="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent bg-[length:200%_100%] animate-shimmer relative overflow-hidden inline-block pb-1">
-            {t("hero.pavadinimas2")}
+          <span className="relative inline-flex items-center justify-center overflow-hidden align-bottom w-full h-[7rem] sm:h-[5.5rem] md:h-[6.5rem] lg:h-[10rem]">
+            <AnimatePresence mode="popLayout">
+              <motion.span
+                key={wordIndex}
+                initial={{ y: "100%", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: "-100%", opacity: 0 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                className="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent absolute inset-0 flex items-center justify-center text-center"
+              >
+                {rotatingWords[wordIndex]}
+              </motion.span>
+            </AnimatePresence>
           </span>
         </motion.h1>
 
