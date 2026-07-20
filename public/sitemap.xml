@@ -141,4 +141,32 @@
     <lastmod>2026-07-19</lastmod>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://webzy.lt/wordpress-svetainiu-kurimas</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://webzy.lt/wordpress-svetainiu-kurimas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://webzy.lt/en/wordpress-website-development" />
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://webzy.lt/en/wordpress-website-development</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://webzy.lt/wordpress-svetainiu-kurimas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://webzy.lt/en/wordpress-website-development" />
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://webzy.lt/svetainiu-prieziura</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://webzy.lt/svetainiu-prieziura" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://webzy.lt/en/website-maintenance" />
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://webzy.lt/en/website-maintenance</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://webzy.lt/svetainiu-prieziura" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://webzy.lt/en/website-maintenance" />
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>
