@@ -178,19 +178,19 @@ export default function WordPressDevelopmentPage() {
                   <div className="p-5 font-mono text-sm leading-relaxed">
                     <div className="text-pink-400">&lt;?php</div>
                     <div className="h-2" />
-                    <div className="text-gray-500">/**</div>
+                    <div className="text-gray-500">{'/**'}</div>
                     <div className="text-gray-500"> * Your WordPress website</div>
                     <div className="text-gray-500"> * Built by: WEBZY</div>
-                    <div className="text-gray-500"> */</div>
+                    <div className="text-gray-500">{' */'}</div>
                     <div className="h-2" />
-                    <div><span className="text-pink-400">define</span><span className="text-gray-300">(</span><span className="text-green-400">'WP_SITEURL'</span><span className="text-gray-300">,</span></div>
-                    <div>  <span className="text-green-400">'your-website.com'</span><span className="text-gray-300">);</span></div>
+                    <div><span className="text-pink-400">define</span><span className="text-gray-300">(</span><span className="text-green-400">&apos;WP_SITEURL&apos;</span><span className="text-gray-300">,</span></div>
+                    <div>  <span className="text-green-400">&apos;your-website.com&apos;</span><span className="text-gray-300">);</span></div>
                     <div className="h-2" />
-                    <div><span className="text-pink-400">add_theme_support</span><span className="text-gray-300">(</span><span className="text-green-400">'responsive'</span><span className="text-gray-300">);</span></div>
-                    <div><span className="text-pink-400">add_theme_support</span><span className="text-gray-300">(</span><span className="text-green-400">'seo-optimized'</span><span className="text-gray-300">);</span></div>
-                    <div><span className="text-pink-400">add_theme_support</span><span className="text-gray-300">(</span><span className="text-green-400">'lightning-fast'</span><span className="text-gray-300">);</span></div>
+                    <div><span className="text-pink-400">add_theme_support</span><span className="text-gray-300">(</span><span className="text-green-400">&apos;responsive&apos;</span><span className="text-gray-300">);</span></div>
+                    <div><span className="text-pink-400">add_theme_support</span><span className="text-gray-300">(</span><span className="text-green-400">&apos;seo-optimized&apos;</span><span className="text-gray-300">);</span></div>
+                    <div><span className="text-pink-400">add_theme_support</span><span className="text-gray-300">(</span><span className="text-green-400">&apos;lightning-fast&apos;</span><span className="text-gray-300">);</span></div>
                     <div className="h-2" />
-                    <div className="text-gray-500">// deployed successfully ✓</div>
+                    <div className="text-gray-500">{'// deployed successfully ✓'}</div>
                   </div>
                   <div className="px-4 py-1.5 bg-[#2d2d2d] border-t border-gray-700 flex items-center gap-2">
                     <span className="text-green-400 text-xs">✓</span>
@@ -211,12 +211,12 @@ export default function WordPressDevelopmentPage() {
             <AnimatedOnScroll animation="fade-in-up">
             <h5 className="text-primary-600 dark:text-primary-400 font-semibold text-sm uppercase tracking-widest mb-4">Why WordPress?</h5>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              WordPress – The World's Most Popular Website Platform
+              WordPress – The World&rsquo;s Most Popular Website Platform
             </h2>
             </AnimatedOnScroll>
             <AnimatedOnScroll animation="fade-in-up" delay={0.15}>
             <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Over 40% of all websites worldwide run on WordPress. It's a flexible, secure, and easy-to-manage system chosen by both small businesses and global brands.
+              Over 40% of all websites worldwide run on WordPress. It&rsquo;s a flexible, secure, and easy-to-manage system chosen by both small businesses and global brands.
             </p>
             </AnimatedOnScroll>
           </div>
@@ -329,7 +329,7 @@ export default function WordPressDevelopmentPage() {
           <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-3xl p-12 md:p-16 text-center text-white shadow-xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your WordPress Project?</h2>
             <p className="text-primary-100 text-lg max-w-2xl mx-auto mb-8">
-              Contact us today and get a free consultation. We'll discuss your needs and provide a concrete proposal.
+              Contact us today and get a free consultation. We&rsquo;ll discuss your needs and provide a concrete proposal.
             </p>
             <Link href="#contact" className="inline-flex items-center gap-2 bg-white text-primary-600 font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl">
               Get a Free Consultation <FiArrowRight className="w-5 h-5" />

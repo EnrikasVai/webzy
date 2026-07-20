@@ -179,19 +179,19 @@ export default function WordPressSvetainiuKurimasPage() {
                   <div className="p-5 font-mono text-sm leading-relaxed">
                     <div className="text-pink-400">&lt;?php</div>
                     <div className="h-2" />
-                    <div className="text-gray-500">/**</div>
+                    <div className="text-gray-500">{'/**'}</div>
                     <div className="text-gray-500"> * Jūsų WordPress svetainė</div>
                     <div className="text-gray-500"> * Sukurta: WEBZY</div>
-                    <div className="text-gray-500"> */</div>
+                    <div className="text-gray-500">{' */'}</div>
                     <div className="h-2" />
-                    <div><span className="text-pink-400">define</span><span className="text-gray-300">(</span><span className="text-green-400">'WP_SITEURL'</span><span className="text-gray-300">,</span></div>
-                    <div>  <span className="text-green-400">'jusu-svetaine.lt'</span><span className="text-gray-300">);</span></div>
+                    <div><span className="text-pink-400">define</span><span className="text-gray-300">(</span><span className="text-green-400">&apos;WP_SITEURL&apos;</span><span className="text-gray-300">,</span></div>
+                    <div>  <span className="text-green-400">&apos;jusu-svetaine.lt&apos;</span><span className="text-gray-300">);</span></div>
                     <div className="h-2" />
-                    <div><span className="text-pink-400">add_theme_support</span><span className="text-gray-300">(</span><span className="text-green-400">'responsive'</span><span className="text-gray-300">);</span></div>
-                    <div><span className="text-pink-400">add_theme_support</span><span className="text-gray-300">(</span><span className="text-green-400">'seo-optimized'</span><span className="text-gray-300">);</span></div>
-                    <div><span className="text-pink-400">add_theme_support</span><span className="text-gray-300">(</span><span className="text-green-400">'lightning-fast'</span><span className="text-gray-300">);</span></div>
+                    <div><span className="text-pink-400">add_theme_support</span><span className="text-gray-300">(</span><span className="text-green-400">&apos;responsive&apos;</span><span className="text-gray-300">);</span></div>
+                    <div><span className="text-pink-400">add_theme_support</span><span className="text-gray-300">(</span><span className="text-green-400">&apos;seo-optimized&apos;</span><span className="text-gray-300">);</span></div>
+                    <div><span className="text-pink-400">add_theme_support</span><span className="text-gray-300">(</span><span className="text-green-400">&apos;lightning-fast&apos;</span><span className="text-gray-300">);</span></div>
                     <div className="h-2" />
-                    <div className="text-gray-500">// paleista sėkmingai ✓</div>
+                    <div className="text-gray-500">{'// paleista sėkmingai ✓'}</div>
                   </div>
                   <div className="px-4 py-1.5 bg-[#2d2d2d] border-t border-gray-700 flex items-center gap-2">
                     <span className="text-green-400 text-xs">✓</span>
