@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
                   "@type": "Organization",
                   name: "WEBZY",
                   url: "https://webzy.lt",
-                  logo: "https://webzy.lt/logo.svg",
+                  logo: "https://webzy.lt/icon.webp",
                   description:
                     "Profesionalios interneto svetainių kūrimas nuo 299€.",
                   email: "info@webzy.lt",

@@ -48,7 +48,7 @@ export default function BlogPostPage({ params }) {
               name: "WEBZY",
               logo: {
                 "@type": "ImageObject",
-                url: "https://webzy.lt/logo.svg",
+                url: "https://webzy.lt/icon.webp",
               },
             },
             mainEntityOfPage: {
