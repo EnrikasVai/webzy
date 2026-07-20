@@ -124,7 +124,7 @@ const blogPosts = [
         </p>
         <ul>
           <li><strong>Target Audience (Buyer Persona):</strong> Who will visit your website? What are their needs, fears and expectations?</li>
-          <li><strong>Website Goal:</strong> Will it be a business website for <a href="https://webzy.lt/en/kontaktai/">communicating with clients and providing free consultations</a>, or a complex e-commerce store for direct sales?</li>
+          <li><strong>Website Goal:</strong> Will it be a business website for <a href="https://webzy.lt/en/contact/">communicating with clients and providing free consultations</a>, or a complex e-commerce store for direct sales?</li>
           <li><strong>Competitor Analysis:</strong> What are the strengths and weaknesses of your direct competitors' digital solutions?</li>
         </ul>
         <p>
@@ -204,7 +204,7 @@ const blogPosts = [
           Website development is a long-term investment in your business's future. A professionally built, fast, secure and SEO-compliant website becomes your best salesperson, working 24 hours a day, 7 days a week.
         </p>
         <p>
-          If you are looking for a reliable partner to help you create not only an aesthetically pleasing but also technically sound and profit-generating website, <a href="https://webzy.lt/en/kontaktai/">the Webzy team is ready to help</a>. We create smart solutions that help your business grow in the digital space without any complicated processes.
+          If you are looking for a reliable partner to help you create not only an aesthetically pleasing but also technically sound and profit-generating website, <a href="https://webzy.lt/en/contact/">the Webzy team is ready to help</a>. We create smart solutions that help your business grow in the digital space without any complicated processes.
         </p>
       `,
     },
