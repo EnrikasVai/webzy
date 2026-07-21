@@ -169,4 +169,18 @@
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://webzy.lt/ai-svetainiu-builderis-apzvalga</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://webzy.lt/ai-svetainiu-builderis-apzvalga" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://webzy.lt/en/ai-website-builders-reality-check" />
+    <lastmod>2026-07-21</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://webzy.lt/en/ai-website-builders-reality-check</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://webzy.lt/ai-svetainiu-builderis-apzvalga" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://webzy.lt/en/ai-website-builders-reality-check" />
+    <lastmod>2026-07-21</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>
