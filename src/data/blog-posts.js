@@ -1,5 +1,169 @@
 const blogPosts = [
   {
+    "slug": "ai-svetainiu-builderis-apzvalga",
+    "enSlug": "ai-website-builders-reality-check",
+    "lt": {
+      "title": "Ar AI svetainių kūrimo įrankiai yra geriausias pasirinkimas? Kodėl tai dažniausiai yra nesąmonė",
+      "description": "AI svetainių kūrimo įrankiai žada greitą rezultatą, bet ar jie tikrai tinkami verslui? Kodėl jie neoriginalūs, turi SEO problemų, kelia saugumo riziką ir kaip profesionalus sprendimas užtikrina ilgalaikę sėkmę.",
+      "image": "/blog/ai.webp",
+      "content": `
+        <p>
+          Skaitmeniniame pasaulyje vyksta savotiška revoliucija – AI svetainių kūrimo įrankiai (angl. AI website builders) žada kiekvienam verslui sukurti svetainę per kelias minutes, vos įvedus kelias frazes. Tai skamba viliojančiai: greita, paprasta ir, atrodo, nereikalauja jokių techninių žinių. Tačiau ar tikrai šie įrankiai yra geriausias pasirinkimas jūsų verslui?
+        </p>
+        <p>
+          Šis straipsnis nėra dar viena sausa apžvalga. Tai nuoširdus pašnekesys apie tai, kodėl tikėtis, kad AI sukurta svetainė atstos profesionalų darbą, dažniausiai yra didelė klaida. Juk jūs gi nesistatytumėte namo su žaisliniu kastuvėliu, tiesa?
+        </p>
+        <p>
+          <a href='https://webzy.lt/' target='_blank'>Webzy</a> – čia mes kuriame svetaines, kurios tikrai veikia. Ir šiame straipsnyje atvirai papasakosime, kodėl dauguma AI statyklų yra tik iliuzija, o jūsų verslas nusipelno tikro, tvirto ir pelną nešančio skaitmeninio namo.
+        </p>
+
+        <h2>1. Greita ir paprasta – ar tikrai?</h2>
+        <p>
+          Prisipažinkime, kiekvienas svajoja apie mygtuką Padaryk man svetainę. Ir AI įrankiai tai siūlo. Tačiau už šio paprastumo slypi didžiulės problemos.
+        </p>
+        <ul>
+          <li><strong>Dizainas be sielos:</strong> AI generuoja šablonus pagal tai, ką jau yra matęs. Todėl visos tokios svetainės atrodo vienodai – tai, ką dizaineriai vadina AI šlamštu (angl. AI slop). Jai trūksta kūrybiškumo, jautrumo prekės ženklui ir individualumo (<a href='https://www.forbes.com/sites/bernardmarr/2025/02/14/ai-website-builders-are-they-the-future-or-a-soulless-shortcut/' target='_blank'>Forbes</a>). Ar norite, kad jūsų verslas atrodytų kaip šimtai kitų?</li>
+          <li><strong>Turinys, kurį gėda skaityti:</strong> AI parašytas tekstas dažnai būna beprasmis, pilnas klaidų ir neturi gyvos kalbos (<a href='https://www.techradar.com/computing/artificial-intelligence/i-built-a-website-with-ai-and-it-was-an-absolute-disaster' target='_blank'>TechRadar</a>). Vienas žurnalistas, bandydamas sukurti svetainę su AI, gavo puslapį su atsitiktiniais grybais, paukščiais ir ginklais, nors prašė sukurti svetainę apie video žaidimus. Įsivaizduokite, ką pagalvotų jūsų klientas.</li>
+        </ul>
+
+        <h2>2. SEO – tai ne tik raktiniai žodžiai</h2>
+        <p>
+          <strong>Paieškos sistemų optimizavimas (SEO)</strong> yra daugiau nei meta aprašymai. Tai techninis sudėtingumas, kurio AI nesupranta.
+        </p>
+        <ul>
+          <li><strong>Techninis SEO chaosas:</strong> AI sukurtas kodas dažnai būna nešvarus – su milžiniškais, nenaudojamais CSS failais, kurie sulėtina svetainės įkėlimą. Tai tiesiogiai kenkia <strong>Google Core Web Vitals</strong> – svarbiausiems reitingo veiksniams (<a href='https://web.dev/articles/optimize-ai-generated-code' target='_blank'>Google Web Dev</a>).</li>
+          <li><strong>Google baudos:</strong> Nors 48% svetainių su AI turiniu pasiekia pirmąjį puslapį, 2024 m. Google atnaujinimas nubaudė tas, kurios naudojo prastą AI turinį, ir jos prarado vidutiniškai 17% srauto (<a href='https://www.searchenginejournal.com/google-ai-content-penalty-2024/' target='_blank'>Search Engine Journal</a>).</li>
+          <li><strong>Ribotas lankstumas:</strong> Dauguma uždarų (angl. closed-box) AI platformų neleidžia montuoti galingų SEO įskiepių, tokių kaip Yoast SEO ar RankMath, ir neleidžia tinkamai konfigūruoti meta duomenų (<a href='https://www.semrush.com/blog/ai-website-builders-seo-limitations/' target='_blank'>Semrush</a>).</li>
+        </ul>
+
+        <h2>3. Ar tikrai šis namas stovės ilgai? (Saugumas, nuosavybė, mastelio keitimas)</h2>
+        <p>
+          Greitas statymas dažnai reiškia trapų pamatą. AI svetainių atveju tai yra taisyklė, o ne išimtis.
+        </p>
+        <ul>
+          <li><strong>Nuosavybės iliuzija:</strong> Dauguma AI platformų yra prenumeratinės. Nustojate mokėti – svetainė dingsta. Jūs nevaldote savo duomenų, failų ar kodo. Tai tarsi nuoma, kuri gali bet kada pasibaigti (<a href='https://www.creativebloq.com/features/ai-website-builders-ownership' target='_blank'>Creative Bloq</a>).</li>
+          <li><strong>Kibernetinis pavojus:</strong> Įsilaužėliai pamėgo AI statyklas. Platforma Lovable buvo panaudota sukurti dešimtis tūkstančių sukčiavimo (phishing) svetainių, kurios vogė kredito kortelių duomenis ir prisijungimo informaciją (<a href='https://krebsonsecurity.com/2025/01/ai-platform-used-to-create-thousands-of-phishing-sites/' target='_blank'>Krebs on Security</a>). Vibe coding (programavimas su AI) dažnai reiškia, kad saugumo spragos lieka nepastebėtos, kol tampa per vėlu (<a href='https://www.darkreading.com/application-security/vibe-coding-ai-security-vulnerabilities' target='_blank'>Dark Reading</a>).</li>
+          <li><strong>Pritaikymo ribos:</strong> Ką daryti, kai jūsų verslas išauga ir reikia integracijos su CRM sistema, sudėtingo skaičiuotuvo ar unikalios funkcijos? AI statyklose jūs atsitrenkiate į sieną. Jūs negalite pridėti to, ko platforma nepalaiko (<a href='https://www.cmswire.com/digital-experience/why-ai-website-builders-arent-ready-for-enterprise/' target='_blank'>CMSWire</a>).</li>
+          <li><strong>Prieinamumo problemos:</strong> AI nesirūpina, ar svetaine gali naudotis žmonės su negalia. Dauguma AI svetainių neatitinka <strong>WCAG</strong> standartų – trūksta tinkamų antraščių, aprašymų ekrano skaitytuvams, prastas kontrastas. Tai ne tik etikos, bet ir teisinė rizika (<a href='https://www.accessibility.com/blog/ai-generated-websites-accessibility-concerns' target='_blank'>Accessibility.com</a>).</li>
+        </ul>
+
+        <h2>4. Ką gi siūlo Webzy? (Profesionalus požiūris)</h2>
+        <p>
+          Mes nesistengiame jūsų apgauti greitu mygtuku. Mes siūlome tai, kas <strong>tikrai veikia</strong>.
+        </p>
+
+        <h3>100% individualus dizainas, atitinkantis jūsų prekės ženklą</h3>
+        <p>
+          Mes kuriame ne šabloną, o jūsų verslo veidą. Kiekvienas elementas – nuo šriftų iki mygtukų – yra apgalvotas, kad atspindėtų jūsų vertybes ir patiktų jūsų klientams. Joks AI nesukurs tokio unikalaus ir jautraus dizaino.
+        </p>
+
+        <h3>Galingos ir lanksčios technologijos: WordPress, Shopify, Laravel</h3>
+        <p>
+          Mes naudojame tas pačias technologijas, kuriomis pasitiki milijonai: <strong>WordPress</strong> (idealus lankstumui ir SEO), <strong>Shopify</strong> (lyderis elektroninėje prekyboje) ir <strong>Laravel</strong> (skirtas unikaliems, sudėtingiems projektams). Tai nėra uždari smėlio dėžės – tai atviros, galingos sistemos, kurios gali augti kartu su jūsų verslu.
+        </p>
+
+        <h3>SEO – ne po to, o nuo pat pradžių</h3>
+        <p>
+          Mums SEO nėra papildomas įskiepis. Tai – pamatinė kūrimo proceso dalis. Nuo pirmos kodo eilutės užtikriname, kad jūsų svetainė būtų greita, suprantama Google ir turi visas galimybes užkopti į paieškos viršūnes.
+        </p>
+
+        <h3>Pilna nuosavybė, saugumas ir ramybė</h3>
+        <p>
+          Jūs valdote savo svetainę. Ji priklauso jums, o ne kokiai nors platformai. Mes užtikriname aukščiausią saugumo lygį ir reguliarią priežiūrą, kad jūsų verslas būtų saugus ir pasiekiamas 24/7. Be to, mes užtikriname, kad svetainė būtų prieinama visiems vartotojams.
+        </p>
+
+        <p>
+          <strong>Apibendrinant:</strong> AI svetainių kūrimo įrankiai gali atrodyti kaip stebuklinga piliulė, tačiau jie dažniausiai sukelia šalutinį poveikį: prarandamą prekės ženklą, prastą matomumą Google, saugumo spragas ir galvos skausmą bandant kažką pakeisti.
+        </p>
+        <p>
+          <a href='https://webzy.lt/kontaktai/' target='_blank'>Webzy</a> siūlo ilgalaikį sprendimą, sukurtą su meile ir profesionalumu. Juk jūsų verslas nusipelno geriausio skaitmeninio namo, ar ne?
+        </p>
+      `
+    },
+    "en": {
+      "title": "Are AI Website Builders a Good Idea? Why It's Often Nonsense",
+      "description": "AI website builders promise quick results, but are they really right for your business? Discover why they lack originality, have SEO issues, pose security risks, and how a professional approach ensures long-term success.",
+      "image": "/blog/ai.webp",
+      "content": `
+        <p>
+          A revolution is happening in the digital world – AI website builders promise any business a website in minutes, with just a few prompts. It sounds tempting: quick, easy, and seemingly requiring no technical skills. But is this really the best choice for your business?
+        </p>
+        <p>
+          This isn't another dry review. It's an honest conversation about why expecting an AI-built site to replace professional work is often a big mistake. After all, you wouldn't build a house with a toy shovel, would you?
+        </p>
+        <p>
+          At <a href='https://webzy.lt/en/' target='_blank'>Webzy</a>, we build websites that <strong>actually work</strong>. And in this article, we'll openly explain why most AI builders are just an illusion, and why your business deserves a real, solid, and profitable digital home.
+        </p>
+
+        <h2>1. Quick and Easy – Is It Really?</h2>
+        <p>
+          Let's be honest, everyone dreams of a Make me a website button. And AI tools offer just that. But behind this simplicity lie huge problems.
+        </p>
+        <ul>
+          <li><strong>Soulless Design:</strong> AI generates templates based on what it has already seen. That's why all such websites look the same – what designers call AI slop. It lacks creativity, brand sensitivity, and individuality (<a href='https://www.forbes.com/sites/bernardmarr/2025/02/14/ai-website-builders-are-they-the-future-or-a-soulless-shortcut/' target='_blank'>Forbes</a>). Do you want your business to look like a hundred others?</li>
+          <li><strong>Content You'd Be Embarrassed to Read:</strong> AI-generated text is often meaningless, full of errors, and lacks a natural voice (<a href='https://www.techradar.com/computing/artificial-intelligence/i-built-a-website-with-ai-and-it-was-an-absolute-disaster' target='_blank'>TechRadar</a>). One journalist, trying to build a site with AI, got a page with random mushrooms, birds, and guns, even though he asked for a site about video games. Imagine what your client would think.</li>
+        </ul>
+
+        <h2>2. SEO – It's Not Just About Keywords</h2>
+        <p>
+          <strong>Search Engine Optimization (SEO)</strong> is more than just meta descriptions. It's a technical complexity that AI doesn't understand.
+        </p>
+        <ul>
+          <li><strong>Technical SEO Chaos:</strong> AI-generated code is often dirty – with huge, unused CSS files that slow down page loading. This directly harms <strong>Google Core Web Vitals</strong>, which are crucial ranking factors (<a href='https://web.dev/articles/optimize-ai-generated-code' target='_blank'>Google Web Dev</a>).</li>
+          <li><strong>Google Penalties:</strong> While 48% of sites with AI content reach the first page, Google's 2024 update penalized those using poor AI content, causing them to lose an average of 17% of traffic (<a href='https://www.searchenginejournal.com/google-ai-content-penalty-2024/' target='_blank'>Search Engine Journal</a>).</li>
+          <li><strong>Limited Flexibility:</strong> Most closed-box AI platforms don't allow you to install powerful SEO plugins like Yoast SEO or RankMath, nor do they allow proper configuration of meta data (<a href='https://www.semrush.com/blog/ai-website-builders-seo-limitations/' target='_blank'>Semrush</a>).</li>
+        </ul>
+
+        <h2>3. Will This House Really Stand for Long? (Security, Ownership, Scalability)</h2>
+        <p>
+          Quick builds often mean a fragile foundation. In the case of AI websites, this is the rule, not the exception.
+        </p>
+        <ul>
+          <li><strong>Illusion of Ownership:</strong> Most AI platforms are subscription-based. Stop paying, and your website disappears. You don't control your data, files, or code. It's like renting a home that can be taken away at any time (<a href='https://www.creativebloq.com/features/ai-website-builders-ownership' target='_blank'>Creative Bloq</a>).</li>
+          <li><strong>Cyber Threat:</strong> Cybercriminals have taken a liking to AI builders. The Lovable platform was used to create tens of thousands of phishing sites that stole credit card data and login information (<a href='https://krebsonsecurity.com/2025/01/ai-platform-used-to-create-thousands-of-phishing-sites/' target='_blank'>Krebs on Security</a>). Vibe coding often means security holes go unnoticed until it's too late (<a href='https://www.darkreading.com/application-security/vibe-coding-ai-security-vulnerabilities' target='_blank'>Dark Reading</a>).</li>
+          <li><strong>Customization Limits:</strong> What happens when your business grows and you need a CRM integration, a complex calculator, or a unique feature? With AI builders, you hit a wall. You cannot add what the platform does not support (<a href='https://www.cmswire.com/digital-experience/why-ai-website-builders-arent-ready-for-enterprise/' target='_blank'>CMSWire</a>).</li>
+          <li><strong>Accessibility Issues:</strong> AI doesn't care if people with disabilities can use your site. Most AI sites do not meet <strong>WCAG</strong> standards – lacking proper headings, screen reader descriptions, and good color contrast. This is not just an ethical issue but a legal risk (<a href='https://www.accessibility.com/blog/ai-generated-websites-accessibility-concerns' target='_blank'>Accessibility.com</a>).</li>
+        </ul>
+
+        <h2>4. So What Does Webzy Offer? (A Professional Approach)</h2>
+        <p>
+          We don't try to fool you with a quick button. We offer what <strong>actually works</strong>.
+        </p>
+
+        <h3>100% Custom Design Aligned with Your Brand</h3>
+        <p>
+          We don't create a template, but your business's face. Every element – from fonts to buttons – is carefully considered to reflect your values and appeal to your customers. No AI can create such a unique and sensitive design.
+        </p>
+
+        <h3>Powerful and Flexible Technologies: WordPress, Shopify, Laravel</h3>
+        <p>
+          We use the same technologies trusted by millions: <strong>WordPress</strong> (ideal for flexibility and SEO), <strong>Shopify</strong> (a leader in e-commerce), and <strong>Laravel</strong> (for unique, complex projects). These are not closed sandboxes – they are open, powerful systems that can grow with your business.
+        </p>
+
+        <h3>SEO – Not an Afterthought, but Built-In from the Start</h3>
+        <p>
+          For us, SEO isn't an add-on. It is a foundational part of the development process. From the first line of code, we ensure your site is fast, understandable to Google, and has all the potential to reach the top of search results.
+        </p>
+
+        <h3>Full Ownership, Security, and Peace of Mind</h3>
+        <p>
+          You own your website. It belongs to you, not to some platform. We ensure the highest level of security and regular maintenance to keep your business safe and available 24/7. We also ensure the site is accessible to all users.
+        </p>
+
+        <p>
+          <strong>In conclusion:</strong> AI website builders might seem like a magic pill, but they often have severe side effects: a diluted brand, poor Google visibility, security holes, and headaches when trying to make changes.
+        </p>
+        <p>
+          <a href='https://webzy.lt/en/contact/' target='_blank'>Webzy</a> offers a long-term solution, crafted with love and professionalism. After all, your business deserves the best digital home, doesn't it?
+        </p>
+      `
+    },
+    "date": "2026-07-21",
+    "category": { "lt": "Svetainių kūrimas", "en": "Web Development" },
+    "published": true
+},
+  
+  {
     slug: "internetiniu-svetainiu-kurimas-gidas",
     enSlug: "website-development-guide",
     lt: {
